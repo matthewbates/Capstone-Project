@@ -7,12 +7,17 @@ function Login({ setCurrentUser, currentUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   // Submit login credentials to db
+
+  const handleReset = () => {
+    return setUsername(""), setPassword("");
+  };
+
   function handleLogin(e) {
-    //assign login to for values stored in state | then post req
     let login = {
       username,
       password,
     };
+
     fetch("/login", {
       method: "POST",
       headers: {
@@ -35,7 +40,7 @@ function Login({ setCurrentUser, currentUser }) {
   return (
     <div className="body_of_form">
       {/* Ternary used to verify currentUser| true navigates to home / false null */}
-      {currentUser ? <Navigate to="/Home" /> : null}
+      {currentUser ? <Navigate to="/home" /> : null}
       <Container>
         <div className="pt-5">
           <Form className="outer inner">
@@ -49,7 +54,6 @@ function Login({ setCurrentUser, currentUser }) {
                 placeholder="User Name"
               />
             </Form.Group>
-
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Control
                 onChange={(e) => setPassword(e.target.value)}
@@ -59,7 +63,14 @@ function Login({ setCurrentUser, currentUser }) {
             </Form.Group>
             <Button onClick={handleLogin} variant="primary" to="/login">
               Log In
-            </Button>
+            </Button>{" "}
+            <Button onClick={handleReset}>Reset</Button>
+            <br />
+            {/* style this so it is next to the log in button after MVP */}
+            {/* add classname for styling, too */}
+            <div>
+              Don't have an account? <Link to="/signup">Sign Up</Link>
+            </div>
           </Form>
         </div>
       </Container>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
 import Login from "./Login";
+import Signup from "./Signup";
 
 function App() {
   const [currentUser, setCurrentUser] = useState("");
@@ -31,7 +32,7 @@ function App() {
           <Navbar.Brand as={Link} to="/home">
             {/* add className after MVP */}
             <h3>
-              🏔
+              Peak Bagger 🏔{" "}
               {currentUser ? `Welcome, ${currentUser.username}!` : ""}
             </h3>
           </Navbar.Brand>
@@ -65,9 +66,16 @@ function App() {
         <Route
           path="/"
           element={
-            <Login setCurrentUser={setCurrentUser} currentUser={currentUser} />
+            <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />
           }
         />
+        <Route
+          path="/signup"
+          element={
+            <Signup currentUser={currentUser} setCurrentUser={setCurrentUser} />
+          }
+        ></Route>
+
         <Route path="/checklist" />
         <Route path="/garage_sale" />
         <Route path="/profile" />
