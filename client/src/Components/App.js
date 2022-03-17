@@ -3,26 +3,43 @@ import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
 import Login from "./Login";
 import Signup from "./Signup";
+import Packlist from "./Packlist";
+import GearGarage from "./GearGarage";
 
 function App() {
   const [currentUser, setCurrentUser] = useState("");
+  const [gears, setGears] = useState([]);
+  const [gearTypes, setGearTypes] = useState([]);
+
+  // useEffect(() => {
+  //   fetch(`/gears`)
+  //     .then((response) => response.json())
+  //     .then(console.log);
+  // }, []);
+
+  useEffect(() => {
+    fetch(`/gear_types`)
+      .then((response) => response.json())
+      .then(gearTypes => setGearTypes(gearTypes));
+  }, []);
+
+  // currentUser is added to local storage to persist on page refresh
+  useEffect(() => {
+    const data = localStorage.getItem("user-data");
+    if (data) {
+      setCurrentUser(JSON.parse(data));
+    }
+  }, []);
+
+  // useEffect(() => {
+  //   localStorage.setItem("user-data", JSON.stringify(currentUser));
+  // });
 
   function handleLogout(event) {
     fetch("/logout", {
       method: "DELETE",
     }).then(setCurrentUser());
   }
-
-  // useEffect(() => {
-  //   const data = localStorage.getItem("user-data");
-  //   if (data) {
-  //     setCurrentUser(JSON.parse(data));
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   localStorage.setItem("user-data", JSON.stringify(currentUser));
-  // });
 
   return (
     <BrowserRouter>
@@ -31,18 +48,18 @@ function App() {
           {/* input Navbar image after MVP */}
           <Navbar.Brand as={Link} to="/home">
             {/* add className after MVP */}
-            <h3>
-              Peak Bagger 🏔{" "}
-              {currentUser ? `Welcome, ${currentUser.username}!` : ""}
-            </h3>
+            <h3>🏔 {currentUser ? `Welcome, ${currentUser.username}!` : ""}</h3>
           </Navbar.Brand>
           <div>
             <Navbar>
-              <Nav.Link as={Link} to="/garage_sale">
-                Checklist
+              <Nav.Link as={Link} to="/packlist">
+                Packlist
               </Nav.Link>
-              <Nav.Link as={Link} to="/checklist">
-                Garage Sale
+              <Nav.Link as={Link} to="/gear_garage">
+                Gear Garage
+              </Nav.Link>
+              <Nav.Link as={Link} to="/swap_and_shop">
+                Swap/Shop
               </Nav.Link>
               <Nav.Link as={Link} to="/profile">
                 Profile
@@ -76,8 +93,28 @@ function App() {
           }
         ></Route>
 
-        <Route path="/checklist" />
-        <Route path="/garage_sale" />
+        <Route
+          path="/packlist"
+          element={
+            <Packlist
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+            />
+          }
+        ></Route>
+
+        <Route
+          path="/gear_garage"
+          element={
+            <GearGarage
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+              gears={gears}
+              gearTypes={gearTypes}
+            />
+          }
+        ></Route>
+        <Route path="/swap_and_shop" />
         <Route path="/profile" />
       </Routes>
     </BrowserRouter>

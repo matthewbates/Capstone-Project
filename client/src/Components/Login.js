@@ -8,9 +8,9 @@ function Login({ setCurrentUser, currentUser }) {
   const [password, setPassword] = useState("");
   // Submit login credentials to db
 
-  const handleReset = () => {
+  function handleReset() {
     return setUsername(""), setPassword("");
-  };
+  }
 
   function handleLogin(e) {
     let login = {
@@ -51,6 +51,7 @@ function Login({ setCurrentUser, currentUser }) {
               <Form.Control
                 onChange={(e) => setUsername(e.target.value)}
                 type="username"
+                value={username}
                 placeholder="User Name"
               />
             </Form.Group>
@@ -58,6 +59,7 @@ function Login({ setCurrentUser, currentUser }) {
               <Form.Control
                 onChange={(e) => setPassword(e.target.value)}
                 type="password"
+                value={password}
                 placeholder="Password"
               />
             </Form.Group>
