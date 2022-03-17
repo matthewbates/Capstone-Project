@@ -7,13 +7,12 @@ function Packlist({ selectedGearTypes }) {
 
   return (
     <div>
-      <h2>My Packlist</h2>
-      <Card style={{ width: "14rem" }}>
+      <Card border="primary" style={{ width: "18rem" }}>
+        <Card.Header className="bg-color dark">My PackList</Card.Header>
         <ListGroup variant="flush">
-          {/* these should resemble the added gears' ID */}
           {/* after MVP, handle removing item if they want to take it out */}
           {selectedGearTypes.map((selectedGear) => (
-            <Button>{selectedGear}</Button>
+            <ListGroup.Item>{selectedGear}</ListGroup.Item>
           ))}
         </ListGroup>
       </Card>

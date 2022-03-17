@@ -6,6 +6,7 @@ import Signup from "./Signup";
 import Packlist from "./Packlist";
 import GearGarage from "./GearGarage";
 import Map from "./Map";
+import SwapShop from "./SwapShop";
 
 function App() {
   const [currentUser, setCurrentUser] = useState("");
@@ -14,10 +15,17 @@ function App() {
   // I want to set this list of items in one component; render the list of items in a different component
   // passing setter function to gearGarage; items to packlist
   const [selectedGearTypes, setSelectedGearTypes] = useState([]);
+  const [swapShop, setSwapShop] = useState([]);
+
+  useEffect(() => {
+    fetch("/swap_shops")
+      .then((r) => r.json())
+      .then((swapShop) => setSwapShop(swapShop));
+  }, []);
 
   useEffect(() => {
     fetch(`/gear_types`)
-      .then((response) => response.json())
+      .then((r) => r.json())
       .then((gearTypes) => setGearTypes(gearTypes));
   }, []);
 
@@ -29,9 +37,9 @@ function App() {
     }
   }, []);
 
-  // useEffect(() => {
-  //   localStorage.setItem("user-data", JSON.stringify(currentUser));
-  // });
+  useEffect(() => {
+    localStorage.setItem("user-data", JSON.stringify(currentUser));
+  });
 
   function handleLogout(event) {
     fetch("/logout", {
@@ -59,8 +67,8 @@ function App() {
               <Nav.Link as={Link} to="/gear_garage">
                 Gear Garage
               </Nav.Link>
-              <Nav.Link as={Link} to="/swap_and_shop">
-                Swap/Shop
+              <Nav.Link as={Link} to="/swap_shop">
+                SwapShop
               </Nav.Link>
               <Nav.Link as={Link} to="/profile">
                 Profile
@@ -117,7 +125,17 @@ function App() {
             />
           }
         ></Route>
-        <Route path="/swap_and_shop" />
+        <Route
+          path="/swap_shop"
+          element={
+            <SwapShop
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+              swapShop={swapShop}
+              setSwapShop={setSwapShop}
+            />
+          }
+        ></Route>
         <Route path="/profile" />
         <Route
           path="/map"

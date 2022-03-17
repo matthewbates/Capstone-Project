@@ -23,6 +23,12 @@ function MapContainer() {
     setCurrentPosition(currentPosition);
   };
 
+  const onMarkerDragEnd = (e) => {
+    const lat = e.latLng.lat();
+    const lng = e.latLng.lng();
+    setCurrentPosition({ lat, lng });
+  };
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(success);
   });
@@ -36,26 +42,16 @@ function MapContainer() {
       <LoadScript googleMapsApiKey="AIzaSyD4G8pUuPzvq_CQ9wdT5eOJpGG4ywQtFsY">
         <GoogleMap
           mapContainerStyle={mapStyles}
-          zoom={14.5}
+          zoom={13}
           center={currentPosition}
         >
-          {/* {locations.map((item) => {
-            return (
-              <Marker
-                key={item.name}
-                position={item.location}
-                currentPostition={currentPosition}
-                onClick={() => onSelect(item)}
-              />
-            );
-          })} */}
-          {selected.location && (
-            <InfoWindow
-              position={selected.location}
-              clickable={true}
-              onCloseClick={() => setSelected({})}
-            ></InfoWindow>
-          )}
+          {currentPosition.lat ? (
+            <Marker
+              position={currentPosition}
+              onDragEnd={(e) => onMarkerDragEnd(e)}
+              draggable={true}
+            />
+          ) : null}
         </GoogleMap>
       </LoadScript>
     </div>
