@@ -10,6 +10,9 @@ import Map from "./Map";
 function App() {
   const [currentUser, setCurrentUser] = useState("");
   const [gearTypes, setGearTypes] = useState([]);
+  // empty list; if we want to add something to it, use setSelectedGearTypes
+  // I want to set this list of items in one component; render the list of items in a different component
+  // passing setter function to gearGarage; items to packlist
   const [selectedGearTypes, setSelectedGearTypes] = useState([]);
 
   useEffect(() => {
@@ -109,13 +112,19 @@ function App() {
               currentUser={currentUser}
               setCurrentUser={setCurrentUser}
               gearTypes={gearTypes}
+              // handles the select onClick
               handleSelect={setSelectedGearTypes}
             />
           }
         ></Route>
         <Route path="/swap_and_shop" />
         <Route path="/profile" />
-        <Route path="/map" />
+        <Route
+          path="/map"
+          element={
+            <Map currentUser={currentUser} setCurrentUser={setCurrentUser} />
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

@@ -20,7 +20,7 @@ function GearGarage({ currentUser, SetCurrentUser, gearTypes, handleSelect }) {
 
   return (
     <div>
-      <h2>Add Gear To Your Pack</h2>
+      <h2>What Gear Will I Need?</h2>
       <Container>
         {gearTypes.map((type) => {
           const list = type.gears.map((gear) => {
@@ -36,11 +36,11 @@ function GearGarage({ currentUser, SetCurrentUser, gearTypes, handleSelect }) {
             <div key={type.id}>
               <Card.Text>{type.name}</Card.Text>
               <Container>
-                {/* rename li item */}
                 {list.map((gearItem) => (
                   <div key={gearItem.id}>
                     <Button
                       onClick={() =>
+                        // selectedGearTypes is the CURRENT STATE; for this item that we clicked on, add it to a list that includes everything that's currently in state
                         handleSelect((selectedGearTypes) => {
                           return [gearItem, ...selectedGearTypes];
                         })
