@@ -5,22 +5,17 @@ import Login from "./Login";
 import Signup from "./Signup";
 import Packlist from "./Packlist";
 import GearGarage from "./GearGarage";
+import Map from "./Map";
 
 function App() {
   const [currentUser, setCurrentUser] = useState("");
-  const [gears, setGears] = useState([]);
   const [gearTypes, setGearTypes] = useState([]);
-
-  // useEffect(() => {
-  //   fetch(`/gears`)
-  //     .then((response) => response.json())
-  //     .then(console.log);
-  // }, []);
+  const [selectedGearTypes, setSelectedGearTypes] = useState([]);
 
   useEffect(() => {
     fetch(`/gear_types`)
       .then((response) => response.json())
-      .then(gearTypes => setGearTypes(gearTypes));
+      .then((gearTypes) => setGearTypes(gearTypes));
   }, []);
 
   // currentUser is added to local storage to persist on page refresh
@@ -52,6 +47,9 @@ function App() {
           </Navbar.Brand>
           <div>
             <Navbar>
+              <Nav.Link as={Link} to="/map">
+                Map
+              </Nav.Link>
               <Nav.Link as={Link} to="/packlist">
                 Packlist
               </Nav.Link>
@@ -97,6 +95,7 @@ function App() {
           path="/packlist"
           element={
             <Packlist
+              selectedGearTypes={selectedGearTypes}
               currentUser={currentUser}
               setCurrentUser={setCurrentUser}
             />
@@ -109,13 +108,14 @@ function App() {
             <GearGarage
               currentUser={currentUser}
               setCurrentUser={setCurrentUser}
-              gears={gears}
               gearTypes={gearTypes}
+              handleSelect={setSelectedGearTypes}
             />
           }
         ></Route>
         <Route path="/swap_and_shop" />
         <Route path="/profile" />
+        <Route path="/map" />
       </Routes>
     </BrowserRouter>
   );
