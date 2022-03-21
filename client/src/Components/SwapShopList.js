@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
 import SwapShop from "./SwapShop";
-import Search from "./Search";
+import Search from "./Searches/SwapSearch";
 
 function SwapShopList({
   swapShop,

@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import { BrowserRouter, Navigate, Link, Routes, Route } from "react-router-dom";
-import Login from "./Login";
-import Signup from "./Signup";
+import Login from "./Auth/Login";
+import Signup from "./Auth/Signup";
 import Packlist from "./Packlist";
 import GearGarage from "./GearGarage";
 import Trailheads from "./Trailheads";
 import TrailInfoList from "./TrailInfoList";
 import SwapShopList from "./SwapShopList";
-import UserPage from "./UserPage";
+import UserPage from "./Auth/UserPage";
+import Home from "./Home";
 
 function App() {
   const [currentUser, setCurrentUser] = useState("");
@@ -22,6 +23,7 @@ function App() {
   const [search, setSearch] = useState("");
   const [catSearch, setCatSearch] = useState("");
   const [priceSearch, setPriceSearch] = useState("");
+  const [hikeSearch, setHikeSearch] = useState("");
 
   useEffect(() => {
     fetch("/swap_shops")
@@ -192,6 +194,16 @@ function App() {
               currentUser={currentUser}
               trailInfo={trailInfo}
               setTrailInfo={setTrailInfo}
+            />
+          }
+        />
+        <Route
+          path="/home"
+          element={
+            <Home
+              currentUser={currentUser}
+              search={hikeSearch}
+              setter={setHikeSearch}
             />
           }
         />
