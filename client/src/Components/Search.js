@@ -9,8 +9,8 @@ function Search({
   priceSearch,
   priceSetter,
 }) {
-  function renderSwapShopSearch(event) {
-    setter(event.target.value);
+  function renderSwapShopSearch(e) {
+    setter(e.target.value);
   }
 
   function handleCatagorySelect(event) {
@@ -30,7 +30,7 @@ function Search({
           arial-label="Search"
           aria-describedby="search-addon"
           value={search}
-          placeholder="Search for an item"
+          placeholder="Search By Item"
           onChange={renderSwapShopSearch}
         />
         <Col>

@@ -18,9 +18,8 @@ function SwapShopList({
     .filter((shop) =>
       shop.catagory.toLowerCase().includes(catSearch.toLowerCase())
     )
-
     .filter((shop) =>
-      shop.catagory.toLowerCase().includes(search.toLowerCase())
+      shop.item.toLowerCase().includes(priceSearch.toLowerCase())
     );
 
   return (
