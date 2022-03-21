@@ -2,17 +2,23 @@ import React, { useState, useEffect } from "react";
 import { Col, Card, Image, Button, ListGroup } from "react-bootstrap";
 
 // pass a prop in for a gears' ID from GearGarage component
-function Packlist({ selectedGearTypes }) {
-  const [removeGear, setRemoveGear] = useState("");
+function Packlist({ selectedGearTypes, deleteGear }) {
+
+  function renderDelete() {
+    fetch(`gears/`, {
+      method: "DELETE",
+    })
+      .then((r) => r.json())
+      .then(() => deleteGear());
+  }
 
   return (
     <div>
       <Card border="primary" style={{ width: "18rem" }}>
         <Card.Header className="bg-color dark">My PackList</Card.Header>
         <ListGroup variant="flush">
-          {/* after MVP, handle removing item if they want to take it out */}
           {selectedGearTypes.map((selectedGear) => (
-            <ListGroup.Item>{selectedGear}</ListGroup.Item>
+            <Button onClick={renderDelete}>{selectedGear}</Button>
           ))}
         </ListGroup>
       </Card>

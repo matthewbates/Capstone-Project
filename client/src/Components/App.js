@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
-import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Navigate, Link, Routes, Route } from "react-router-dom";
 import Login from "./Login";
 import Signup from "./Signup";
 import Packlist from "./Packlist";
 import GearGarage from "./GearGarage";
-import Map from "./Map";
-import SwapShop from "./SwapShop";
+import Trailheads from "./Trailheads";
+import TrailInfoList from "./TrailInfoList";
+import SwapShopList from "./SwapShopList";
+import UserPage from "./UserPage";
 
 function App() {
   const [currentUser, setCurrentUser] = useState("");
@@ -16,6 +18,10 @@ function App() {
   // passing setter function to gearGarage; items to packlist
   const [selectedGearTypes, setSelectedGearTypes] = useState([]);
   const [swapShop, setSwapShop] = useState([]);
+  const [trailInfo, setTrailInfo] = useState([]);
+  const [search, setSearch] = useState("");
+  const [catSearch, setCatSearch] = useState("");
+  const [priceSearch, setPriceSearch] = useState("");
 
   useEffect(() => {
     fetch("/swap_shops")
@@ -23,10 +29,21 @@ function App() {
       .then((swapShop) => setSwapShop(swapShop));
   }, []);
 
+  const deletePackListItem = (id) => {
+    const updatedPackList = selectedGearTypes.filter((gear) => gear.id !== id);
+    setSelectedGearTypes(updatedPackList);
+  };
+
   useEffect(() => {
     fetch(`/gear_types`)
       .then((r) => r.json())
       .then((gearTypes) => setGearTypes(gearTypes));
+  }, []);
+
+  useEffect(() => {
+    fetch("/hikes")
+      .then((response) => response.json())
+      .then((trailInfo) => setTrailInfo(trailInfo));
   }, []);
 
   // currentUser is added to local storage to persist on page refresh
@@ -59,7 +76,7 @@ function App() {
           <div>
             <Navbar>
               <Nav.Link as={Link} to="/map">
-                Map
+                Trailheads
               </Nav.Link>
               <Nav.Link as={Link} to="/packlist">
                 Packlist
@@ -67,10 +84,10 @@ function App() {
               <Nav.Link as={Link} to="/gear_garage">
                 Gear Garage
               </Nav.Link>
-              <Nav.Link as={Link} to="/swap_shop">
-                SwapShop
+              <Nav.Link as={Link} to="/swap_shop_list">
+                Swap/Shop
               </Nav.Link>
-              <Nav.Link as={Link} to="/profile">
+              <Nav.Link as={Link} to="/userpage">
                 Profile
               </Nav.Link>
               <div>
@@ -109,6 +126,7 @@ function App() {
               selectedGearTypes={selectedGearTypes}
               currentUser={currentUser}
               setCurrentUser={setCurrentUser}
+              deleteGear={deletePackListItem}
             />
           }
         ></Route>
@@ -122,25 +140,59 @@ function App() {
               gearTypes={gearTypes}
               // handles the select onClick
               handleSelect={setSelectedGearTypes}
+              search={search}
+              setter={setSearch}
+              catSearch={catSearch}
+              catSetter={setCatSearch}
+              priceSearch={priceSearch}
+              priceSetter={setPriceSearch}
             />
           }
         ></Route>
         <Route
-          path="/swap_shop"
+          path="/swap_shop_list"
           element={
-            <SwapShop
+            <SwapShopList
               currentUser={currentUser}
-              setCurrentUser={setCurrentUser}
               swapShop={swapShop}
-              setSwapShop={setSwapShop}
+              setSwap={setSwapShop}
+              search={search}
+              setter={setSearch}
+              catSearch={catSearch}
+              catSetter={setCatSearch}
+              priceSearch={priceSearch}
+              priceSetter={setPriceSearch}
             />
           }
         ></Route>
-        <Route path="/profile" />
+        <Route
+          path="/userpage"
+          element={
+            <UserPage
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+            />
+          }
+        />
         <Route
           path="/map"
           element={
-            <Map currentUser={currentUser} setCurrentUser={setCurrentUser} />
+            <Trailheads
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+              trailInfo={trailInfo}
+              setTrailInfo={setTrailInfo}
+            />
+          }
+        />
+        <Route
+          path="/trail_info_list"
+          element={
+            <TrailInfoList
+              currentUser={currentUser}
+              trailInfo={trailInfo}
+              setTrailInfo={setTrailInfo}
+            />
           }
         />
       </Routes>

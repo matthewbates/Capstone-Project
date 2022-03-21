@@ -13,11 +13,11 @@ function Login({ setCurrentUser, currentUser }) {
   }
 
   function handleLogin(e) {
+    //assign login to for values stored in state | then post req
     let login = {
       username,
       password,
     };
-
     fetch("/login", {
       method: "POST",
       headers: {
@@ -39,7 +39,7 @@ function Login({ setCurrentUser, currentUser }) {
 
   return (
     <div className="body_of_form">
-      {/* Ternary used to verify currentUser| true navigates to home / false null */}
+      {/* Ternary used to verify currentUser | true navigates to home / false null */}
       {currentUser ? <Navigate to="/home" /> : null}
       <Container>
         <div className="pt-5">

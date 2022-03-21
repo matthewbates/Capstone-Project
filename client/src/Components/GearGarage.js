@@ -38,7 +38,8 @@ function GearGarage({ currentUser, SetCurrentUser, gearTypes, handleSelect }) {
               <Container>
                 {list.map((gearItem) => (
                   <div key={gearItem.id}>
-                    <Button variant="success"
+                    <Button
+                      variant="success"
                       onClick={() =>
                         // selectedGearTypes is the CURRENT STATE; for this item that we clicked on, add it to a list that includes everything that's currently in state
                         handleSelect((selectedGearTypes) => {

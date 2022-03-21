@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  backpacking_gear: MyString
+  backcountry_kitchen: MyString
+  food_and_water: MyString
+  clothing_and_footwear: MyString
+  emergency_and_first_aid: MyString
+  health_and_hygiene: MyString
+  tools_and_repair_items: MyString
+  extras: MyString
+
+two:
+  backpacking_gear: MyString
+  backcountry_kitchen: MyString
+  food_and_water: MyString
+  clothing_and_footwear: MyString
+  emergency_and_first_aid: MyString
+  health_and_hygiene: MyString
+  tools_and_repair_items: MyString
+  extras: MyString
