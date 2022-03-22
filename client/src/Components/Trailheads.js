@@ -30,6 +30,7 @@ function Trailheads({ id, name, lat, lng, trailInfo, setTrailInfo }) {
 
   const locations = [
     {
+      id: 1,
       name: "Red Mountain",
       location: {
         lat: 38.851379,
@@ -37,6 +38,7 @@ function Trailheads({ id, name, lat, lng, trailInfo, setTrailInfo }) {
       },
     },
     {
+      id: 2,
       name: "Iron Mountain",
       location: {
         lat: 38.849157,
@@ -79,16 +81,14 @@ function Trailheads({ id, name, lat, lng, trailInfo, setTrailInfo }) {
             >
               <div>
                 <b>{selected.name}</b>{" "}
-                {trailInfo.map((info) => (
-                  <Button
-                    className="mx-auto"
-                    as={Link}
-                    onClick={() => setTrailInfo(id)}
-                    to={`/trail_info_list`}
-                  >
-                    View Information
-                  </Button>
-                ))}
+                <Button
+                  className="mx-auto"
+                  as={Link}
+                  // onClick={() => setTrailInfo(id)}
+                  to={`/trail_info_list/${selected.id}`}
+                >
+                  View Information
+                </Button>
               </div>
             </InfoWindow>
           )}

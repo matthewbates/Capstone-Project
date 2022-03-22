@@ -188,7 +188,7 @@ function App() {
           }
         />
         <Route
-          path="/trail_info_list"
+          path="/trail_info_list/:id"
           element={
             <TrailInfoList
               currentUser={currentUser}

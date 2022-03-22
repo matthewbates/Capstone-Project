@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :gears, only: %i[index show destroy]
   resources :gear_types, only: %i[index show]
   resources :swap_shops, only: %i[index show]
-  resources :hikes, only: [:index]
+  resources :hikes, only: %i[index show]
   resources :users
 
   # current user

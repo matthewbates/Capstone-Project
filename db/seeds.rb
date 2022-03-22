@@ -119,6 +119,19 @@ h1 =
     lat: '38.851379',
     lng: '-104.921',
   )
+h2 =
+  Hike.create(
+    trail_name: 'Iron Mountain Trail',
+    out_and_back: 'True',
+    loop: 'False',
+    difficulty: 'Easy',
+    total_length: 4.0,
+    elevation_profile: 'Ascent: 758 ft. | Descent: 247 ft.',
+    allows_dogs: 'Yes',
+    allows_bikes: 'No',
+    lat: '38.849157',
+    lng: '-104.913',
+  )
 
 puts 'Creating Swapshop items...'
 s1 =
