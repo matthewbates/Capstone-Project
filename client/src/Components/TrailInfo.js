@@ -15,8 +15,11 @@ function TrailInfo({
 }) {
   return (
     <>
-      <Image src={image} />
-      <Col sm={12} md={12} lg={12} className="justify-content-center mb-2 mt-2">
+      <div className="d-flex align-items-center justify-content-center">
+        >
+        <Image src={image} alt="route image" />
+      </div>
+      <Col sm={12} md={12} lg={12}>
         <hr />
         <div className="d-flex align-items-center justify-content-center">
           <Row className="d-flex align-items-center justify-content-center col-11">
