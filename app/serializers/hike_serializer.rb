@@ -1,6 +1,7 @@
 class HikeSerializer < ActiveModel::Serializer
   attributes :id,
              :trail_name,
+             :image,
              :out_and_back,
              :loop,
              :total_length,

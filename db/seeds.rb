@@ -109,8 +109,10 @@ g62 = Gear.create!(name: 'Extra Batteries', gear_type: t11)
 h1 =
   Hike.create(
     trail_name: 'Red Mountain Trail',
-    out_and_back: 'True',
-    loop: 'False',
+    image:
+      'https://cdn-assets.alltrails.com/static-map/production/at-map/17715253/trail-us-colorado-manitou-springs-red-mountain-trail-at-map-17715253-1644890139-414x200-2.png',
+    out_and_back: 'Yes',
+    loop: 'No',
     difficulty: 'Moderate',
     total_length: 2.5,
     elevation_profile: 'Ascent: 918 ft. | Descent: 110 ft.',
@@ -122,8 +124,10 @@ h1 =
 h2 =
   Hike.create(
     trail_name: 'Iron Mountain Trail',
-    out_and_back: 'True',
-    loop: 'False',
+    image:
+      'https://cdn-assets.alltrails.com/static-map/production/at-map/19980900/trail-us-colorado-iron-mountain-via-intemann-trail-at-map-19980900-1642642734-414x200-2.png',
+    out_and_back: 'Yes',
+    loop: 'No',
     difficulty: 'Easy',
     total_length: 4.0,
     elevation_profile: 'Ascent: 758 ft. | Descent: 247 ft.',

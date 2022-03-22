@@ -39,6 +39,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_17_005622) do
 
   create_table "hikes", force: :cascade do |t|
     t.string "trail_name"
+    t.string "image"
     t.string "out_and_back"
     t.string "loop"
     t.float "total_length"

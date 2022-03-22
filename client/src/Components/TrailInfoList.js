@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Trailheads from "./Trailheads";
 import TrailInfo from "./TrailInfo";
 import { useParams } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
 
 function TrailInfoList({ trailInfo, setTrailInfo }) {
   const [hike, setHike] = useState([]);
@@ -15,10 +16,14 @@ function TrailInfoList({ trailInfo, setTrailInfo }) {
       .then((hike) => setHike(hike));
   }, []);
   if (hike.length === 0) {
-    return <h3>Loading...</h3>;
+    return (
+      <Spinner animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    );
   }
 
-  console.log(hike)
+  console.log(hike);
   return (
     <>
       <div>
@@ -26,6 +31,7 @@ function TrailInfoList({ trailInfo, setTrailInfo }) {
           key={hike.id}
           id={hike.id}
           name={hike.trail_name}
+          image={hike.image}
           out_and_back={hike.out_and_back}
           loop={hike.loop}
           difficulty={hike.difficulty}
