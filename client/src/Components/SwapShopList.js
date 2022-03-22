@@ -43,14 +43,17 @@ function SwapShopList({
               key={shop.id}
               id={shop.id}
               name={shop.item}
-              image={shop.image}
+              image_one={shop.image_one}
+              image_two={shop.image_two}
+              image_three={shop.image_three}
               price={shop.price}
               description={shop.description}
-              catagory={shop.catagory}
+              category={shop.catagory}
             />
           ))}
         </Row>
       </Container>
+      <Container style={{ width: "4rem", height: "4rem" }}></Container>
     </>
   );
 }

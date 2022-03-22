@@ -39,9 +39,16 @@ function Search({
             title="Search By Catagory"
             onSelect={handleCatagorySelect}
           >
-            <Dropdown.Item eventKey="Clothing">Clothing</Dropdown.Item>
-            <Dropdown.Item eventKey="Shelter">Shelter</Dropdown.Item>
-            <Dropdown.Item eventKey="Footwear">Footwear</Dropdown.Item>
+            <Dropdown.Item eventKey="Clothing & Footwear">
+              Clothing & Footwear
+            </Dropdown.Item>
+            <Dropdown.Item eventKey="Shelters">Shelters</Dropdown.Item>
+            <Dropdown.Item eventKey="Backpacks">Backpacks</Dropdown.Item>
+            <Dropdown.Item eventKey="Other">Other</Dropdown.Item>
+            <Dropdown.Item eventKey="Cook Systems">Cook Systems</Dropdown.Item>
+            <Dropdown.Item eventKey="Sleep Systems">
+              Sleep Systems
+            </Dropdown.Item>
           </DropdownButton>
           <DropdownButton
             id="dropdown-basic-button"

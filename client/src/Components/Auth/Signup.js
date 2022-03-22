@@ -108,11 +108,8 @@ function Signup({ setCurrentUser, currentUser }) {
             </Button>
           </Form>
           <br></br>
-          <div className="already_have_account text-white">
-            Already registered?{" "}
-            <Link className="text-white" to="/">
-              Log In
-            </Link>
+          <div>
+            Already have an account? <Link to="/">Sign In</Link>
           </div>
         </div>
       </Container>

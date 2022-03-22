@@ -54,7 +54,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_17_005622) do
 
   create_table "swap_shops", force: :cascade do |t|
     t.string "item"
-    t.string "image"
+    t.string "image_one"
+    t.string "image_two"
+    t.string "image_three"
     t.integer "price"
     t.string "description"
     t.string "catagory"
