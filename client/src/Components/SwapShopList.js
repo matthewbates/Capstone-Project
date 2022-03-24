@@ -12,14 +12,12 @@ function SwapShopList({
   catSetter,
   priceSearch,
   priceSetter,
+  category,
 }) {
   const filteredSearch = swapShop
     .filter((shop) => shop.item.toLowerCase().includes(search.toLowerCase()))
     .filter((shop) =>
       shop.catagory.toLowerCase().includes(catSearch.toLowerCase())
-    )
-    .filter((shop) =>
-      shop.item.toLowerCase().includes(priceSearch.toLowerCase())
     );
 
   return (

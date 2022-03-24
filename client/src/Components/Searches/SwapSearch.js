@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { Container, Col, DropdownButton, Dropdown } from "react-bootstrap";
+import {
+  Container,
+  Col,
+  DropdownButton,
+  Dropdown,
+  ButtonGroup,
+} from "react-bootstrap";
 
 function Search({
   search,
@@ -10,11 +16,13 @@ function Search({
   priceSetter,
 }) {
   function renderSwapShopSearch(e) {
+    e.preventDefault();
     setter(e.target.value);
   }
 
   function handleCatagorySelect(event) {
     catSetter(event);
+    console.log(event);
   }
 
   function handlePriceSelect(event) {
@@ -35,10 +43,11 @@ function Search({
         />
         <Col>
           <DropdownButton
-            id="dropdown-basic-button"
-            title="Search By Catagory"
+            title={catSearch == "" ? "All Categories" : catSearch}
+            placeholder="search"
             onSelect={handleCatagorySelect}
           >
+            <Dropdown.Item eventKey="">All Categories</Dropdown.Item>
             <Dropdown.Item eventKey="Clothing & Footwear">
               Clothing & Footwear
             </Dropdown.Item>
@@ -50,17 +59,17 @@ function Search({
               Sleep Systems
             </Dropdown.Item>
           </DropdownButton>
+
           <DropdownButton
             id="dropdown-basic-button"
             title="Search By Price"
-            value={priceSearch}
-            onChange={handlePriceSelect}
+            onSelect={handlePriceSelect}
           >
             {/* GET SEARCH BY PRICE TO WORK */}
             <Dropdown.Item eventKey="80">80</Dropdown.Item>
             <Dropdown.Item eventKey="51-100">51-100</Dropdown.Item>
             <Dropdown.Item eventKey="101-200">101-200</Dropdown.Item>
-            <Dropdown.Item eventKey="201+">201+</Dropdown.Item>
+            <Dropdown.Item eventKey="201-400">201-400</Dropdown.Item>
           </DropdownButton>
         </Col>
       </div>

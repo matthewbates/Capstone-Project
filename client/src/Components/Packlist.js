@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Col, Card, Image, Button, ListGroup } from "react-bootstrap";
+import { Col, Card, Image, Button, ListGroup, Container } from "react-bootstrap";
 
 // pass a prop in for a gears' ID from GearGarage component
 function Packlist({ selectedGearTypes, deleteGear }) {
@@ -14,14 +14,18 @@ function Packlist({ selectedGearTypes, deleteGear }) {
 
   return (
     <div>
-      <Card border="primary" style={{ width: "18rem" }}>
-        <Card.Header className="bg-color dark">My PackList</Card.Header>
-        <ListGroup variant="flush">
-          {selectedGearTypes.map((selectedGear) => (
-            <Button onClick={renderDelete}>{selectedGear}</Button>
-          ))}
-        </ListGroup>
-      </Card>
+      <Container>
+        <Col>
+          <Card border="primary" style={{ width: "18rem" }}>
+            <Card.Header className="bg-color dark">My PackList</Card.Header>
+            <ListGroup variant="flush">
+              {selectedGearTypes.map((selectedGear) => (
+                <Button onClick={renderDelete}>{selectedGear}</Button>
+              ))}
+            </ListGroup>
+          </Card>
+        </Col>
+      </Container>
       {/* put a save button; goes to back end */}
     </div>
   );

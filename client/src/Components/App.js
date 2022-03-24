@@ -18,9 +18,10 @@ function App() {
   // I want to set this list of items in one component; render the list of items in a different component
   // passing setter function to gearGarage; items to packlist
   const [selectedGearTypes, setSelectedGearTypes] = useState([]);
+  const [selectedFavorte, setSelectedFavorites] = useState([]);
   const [swapShop, setSwapShop] = useState([]);
-  const [trailInfo, setTrailInfo] = useState([]);
   const [search, setSearch] = useState("");
+  const [trailInfo, setTrailInfo] = useState([]);
   const [catSearch, setCatSearch] = useState("");
   const [priceSearch, setPriceSearch] = useState("");
   const [hikeSearch, setHikeSearch] = useState("");
@@ -142,8 +143,6 @@ function App() {
               gearTypes={gearTypes}
               // handles the select onClick
               handleSelect={setSelectedGearTypes}
-              search={search}
-              setter={setSearch}
               catSearch={catSearch}
               catSetter={setCatSearch}
               priceSearch={priceSearch}
@@ -162,8 +161,6 @@ function App() {
               setter={setSearch}
               catSearch={catSearch}
               catSetter={setCatSearch}
-              priceSearch={priceSearch}
-              priceSetter={setPriceSearch}
             />
           }
         ></Route>
@@ -181,9 +178,9 @@ function App() {
           element={
             <Trailheads
               currentUser={currentUser}
-              setCurrentUser={setCurrentUser}
               trailInfo={trailInfo}
               setTrailInfo={setTrailInfo}
+              handleSelect={setSelectedFavorites}
             />
           }
         />

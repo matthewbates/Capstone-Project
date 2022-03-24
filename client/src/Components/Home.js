@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Search from "./Searches/HikeSearch";
 // IMPORT TRAIL INFO HERE INTO BOOTSTRAP CONTAINERS SO A USER CAN QUICKLY SEARCH FOR A HIKE
 
 function Home({ search, setter }) {
+  const [favorites, setFavorites] = useState([]);
+
   function renderHikeSearch(event) {
     setter(event.target.value);
   }

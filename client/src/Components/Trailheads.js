@@ -16,8 +16,17 @@ const mapStyles = {
   width: "100%",
 };
 
-function Trailheads({ id, name, lat, lng, trailInfo, setTrailInfo }) {
+function Trailheads({
+  id,
+  name,
+  lat,
+  lng,
+  trailInfo,
+  setTrailInfo,
+  handleSelect,
+}) {
   const [selected, setSelected] = useState({});
+
   const [currentPosition, setCurrentPosition] = useState({});
 
   const success = (position) => {
@@ -43,6 +52,46 @@ function Trailheads({ id, name, lat, lng, trailInfo, setTrailInfo }) {
       location: {
         lat: 38.849157,
         lng: -104.913,
+      },
+    },
+    {
+      id: 3,
+      name: "Manitou Incline",
+      location: {
+        lat: 38.856813,
+        lng: -104.932,
+      },
+    },
+    {
+      id: 4,
+      name: "Barr Trail (To Pikes Peak)",
+      location: {
+        lat: 38.855787,
+        lng: -104.934,
+      },
+    },
+    {
+      id: 5,
+      name: "Lower To Upper Columbine Trail",
+      location: {
+        lat: 38.791414,
+        lng: -104.866,
+      },
+    },
+    {
+      id: 6,
+      name: "Mount Muscoco",
+      location: {
+        lat: 38.785557,
+        lng: -104.889,
+      },
+    },
+    {
+      id: 7,
+      name: "Mount Cutler",
+      location: {
+        lat: 38.787769,
+        lng: -104.877,
       },
     },
   ];
@@ -84,10 +133,9 @@ function Trailheads({ id, name, lat, lng, trailInfo, setTrailInfo }) {
                 <Button
                   className="mx-auto"
                   as={Link}
-                  // onClick={() => setTrailInfo(id)}
                   to={`/trail_info_list/${selected.id}`}
                 >
-                  View Information
+                  Details
                 </Button>
               </div>
             </InfoWindow>

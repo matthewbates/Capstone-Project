@@ -23,7 +23,6 @@ function TrailInfoList({ trailInfo, setTrailInfo }) {
     );
   }
 
-  console.log(hike);
   return (
     <>
       <div>
@@ -39,8 +38,6 @@ function TrailInfoList({ trailInfo, setTrailInfo }) {
           elevation={hike.elevation_profile}
           dogs={hike.allows_dogs}
           bikes={hike.allows_bikes}
-          lat={hike.lat}
-          lng={hike.lng}
         />
       </div>
     </>

@@ -114,7 +114,7 @@ h1 =
     out_and_back: 'Yes',
     loop: 'No',
     difficulty: 'Moderate',
-    total_length: 2.5,
+    total_length: 1.25,
     elevation_profile: 'Ascent: 918 ft. | Descent: 110 ft.',
     allows_dogs: 'Yes',
     allows_bikes: 'No',
@@ -129,21 +129,96 @@ h2 =
     out_and_back: 'Yes',
     loop: 'No',
     difficulty: 'Easy',
-    total_length: 4.0,
+    total_length: 2.1,
     elevation_profile: 'Ascent: 758 ft. | Descent: 247 ft.',
     allows_dogs: 'Yes',
     allows_bikes: 'No',
     lat: '38.849157',
     lng: '-104.913',
   )
+h3 =
+  Hike.create(
+    trail_name: 'Manitou Incline',
+    image:
+      'https://cdn-assets.alltrails.com/static-map/production/at-map/28974582/trail-us-colorado-manitou-incline-to-first-bail-out-at-map-28974582-1644894415-414x200-2.png',
+    out_and_back: 'Yes',
+    loop: 'No',
+    difficulty: 'Hard',
+    total_length: 0.8,
+    elevation_profile: 'Ascent: 1,944 ft. | Descent: 0 ft.',
+    allows_dogs: 'No',
+    allows_bikes: 'No',
+    lat: '38.856813',
+    lng: '-104.932',
+  )
+h4 =
+  Hike.create(
+    trail_name: 'Barr Trail (To Pikes Peak)',
+    image:
+      'https://cdn-assets.alltrails.com/static-map/production/at-map/67720089/trail-us-colorado-barr-camp-via-barr-trail-at-map-67720089-1642829974-414x200-2.png',
+    out_and_back: 'Yes',
+    loop: 'No',
+    difficulty: 'Moderate',
+    total_length: 13.1,
+    elevation_profile: 'Ascent: 7,567 ft. | Descent: 172 ft.',
+    allows_dogs: 'Yes',
+    allows_bikes: 'No',
+    lat: '38.855787',
+    lng: '-104.934',
+  )
+h5 =
+  Hike.create(
+    trail_name: 'Lower To Upper Columbine Trail',
+    image:
+      'https://cdn-assets.alltrails.com/de/static-map/production/at-map/20771031/trail-us-colorado-columbine-trail--4-at-map-20771031-1642645449-414x200-2.png',
+    out_and_back: 'Yes',
+    loop: 'No',
+    difficulty: 'Moderate',
+    total_length: 3.9,
+    elevation_profile: 'Ascent: 1,342 ft. | Descent: 381 ft.',
+    allows_dogs: 'Yes',
+    allows_bikes: 'No',
+    lat: '38.791414',
+    lng: '-104.866',
+  )
+h6 =
+  Hike.create(
+    trail_name: 'Mount Muscoco',
+    image:
+      'https://cdn-assets.alltrails.com/static-map/production/at-map/22241785/trail-us-colorado-mount-muscoco-trail-at-map-22241785-1642650918-414x200-2.png',
+    out_and_back: 'Yes',
+    loop: 'No',
+    difficulty: 'Moderate',
+    total_length: 1.75,
+    elevation_profile: 'Ascent: 1,074 ft. | Descent: 123 ft.',
+    allows_dogs: 'Yes',
+    allows_bikes: 'No',
+    lat: '38.785557',
+    lng: '-104.889',
+  )
+h7 =
+  Hike.create(
+    trail_name: 'Mount Cutler',
+    image:
+      'https://cdn-assets.alltrails.com/static-map/production/at-map/13370145/trail-us-colorado-mt-cutler-trail-at-map-13370145-1644328921-414x200-2.png',
+    out_and_back: 'Yes',
+    loop: 'No',
+    difficulty: 'Easy',
+    total_length: 1.1,
+    elevation_profile: 'Ascent: 453 ft. | Descent: 189 ft.',
+    allows_dogs: 'Yes',
+    allows_bikes: 'No',
+    lat: '38.787769',
+    lng: '-104.877',
+  )
 
 puts 'Creating Swapshop items...'
 s1 =
   SwapShop.create!(
     item: 'Melanzana Micro Grid Hoodie',
-    image_one: 'https://i.ebayimg.com/images/g/Mp8AAOSwSftiMpl9/s-l1600.jpg',
-    image_two: 'https://i.ebayimg.com/images/g/insAAOSw3rRiKAqk/s-l1600.jpg',
-    image_three: 'https://i.ebayimg.com/images/g/u5QAAOSw0ctiKAqu/s-l1600.jpg',
+    image_one: 'https://i.ebayimg.com/images/g/5FUAAOSwTh9iMrHj/s-l1600.jpg',
+    image_two: 'https://i.ebayimg.com/images/g/LIMAAOSwWMBiMqbb/s-l1600.jpg',
+    image_three: 'https://i.ebayimg.com/images/g/fSYAAOSwRixiMqbe/s-l1600.jpg',
     price: 80,
     description:
       "A really comfortable hoodie that's handmade in Leadville, CO - and only available for purchase in-store! Mens size L, pre-loved but still in great condition",
@@ -156,9 +231,9 @@ s2 =
     image_one: 'https://i.ebayimg.com/images/g/04gAAOSwRxNiOO8G/s-l1600.jpg',
     image_two: 'https://i.ebayimg.com/images/g/~OwAAOSwzxpiOO8L/s-l1600.jpg',
     image_three: 'https://i.ebayimg.com/images/g/J8gAAOSwBD5iOO8R/s-l1600.jpg',
-    price: 375,
+    price: 300,
     description:
-      "This possibly could be the lightest backpacking tent on the market, and has only been used a couple of times. It's supported by a single trekking pole that must be at least 48 inches tall. Serious inquiries only!",
+      "This possibly could be the lightest backpacking tent on the market, and has only been used a handful of times. There are some obvious tears in the mesh which need to be patched, but otherwise is in great shape. It's supported by a single trekking pole that must be at least 48 inches tall. Serious inquiries only!",
     catagory: 'Shelters',
     user: u1,
   )
