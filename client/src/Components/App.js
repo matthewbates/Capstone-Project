@@ -14,11 +14,8 @@ import Home from "./Home";
 function App() {
   const [currentUser, setCurrentUser] = useState("");
   const [gearTypes, setGearTypes] = useState([]);
-  // empty list; if we want to add something to it, use setSelectedGearTypes
-  // I want to set this list of items in one component; render the list of items in a different component
-  // passing setter function to gearGarage; items to packlist
   const [selectedGearTypes, setSelectedGearTypes] = useState([]);
-  const [selectedFavorte, setSelectedFavorites] = useState([]);
+  const [selectedFavorites, setSelectedFavorites] = useState("");
   const [swapShop, setSwapShop] = useState([]);
   const [search, setSearch] = useState("");
   const [trailInfo, setTrailInfo] = useState([]);

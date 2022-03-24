@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { Link, Navigate } from "react-router-dom";
-import GoogleLogin from "react-google-login";
 
 function Login({ setCurrentUser, currentUser }) {
   // Login state
@@ -12,10 +11,6 @@ function Login({ setCurrentUser, currentUser }) {
   function handleReset() {
     return setUsername(""), setPassword("");
   }
-
-  const responseGoogle = (response) => {
-    console.log(response);
-  };
 
   function handleLogin(e) {
     //assign login to for values stored in state | then post req
@@ -41,14 +36,6 @@ function Login({ setCurrentUser, currentUser }) {
         }
       });
   }
-
-  // const handleFailure = (result) => {
-  //   alert(result);
-  // };
-
-  // const handleLoginWithGoogle = (googleData) => {
-  //   console.log(googleData);
-  // };
 
   return (
     <div className="body_of_form">
@@ -86,13 +73,6 @@ function Login({ setCurrentUser, currentUser }) {
             <div>
               Don't have an account? <Link to="/signup">Sign Up</Link>
             </div>
-            {/* <GoogleLogin
-              clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-              buttonText="Log in with Google"
-              onSuccess={handleLoginWithGoogle}
-              onFailure={handleFailure}
-              cookiePolicy={"single_host_origin"}
-            ></GoogleLogin> */}
           </Form>
         </div>
       </Container>
