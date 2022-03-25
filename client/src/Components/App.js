@@ -66,19 +66,13 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navbar
-        className="navbar-styling"
-        collapseOnSelect
-        expand="sm"
-        bg="dark"
-        variant="dark"
-        sticky="top"
-      >
+      <Navbar collapseOnSelect expand="sm" bg="dark" variant="dark">
         <Container fluid className="mx-3 align-items-center me-auto">
           {/* input Navbar image after MVP */}
           <Navbar.Brand as={Link} to="/home">
             {/* add className after MVP */}
-            <h3>🏔 {currentUser ? `Welcome, ${currentUser.username}!` : ""}</h3>
+
+            <h3> 🏔 {currentUser ? `Welcome, ${currentUser.username}!` : ""}</h3>
           </Navbar.Brand>
           <div>
             <Navbar>
@@ -114,14 +108,12 @@ function App() {
       </Navbar>
       <Routes>
         <Route
-          className={("login-inner", "outer")}
           path="/"
           element={
             <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />
           }
         />
         <Route
-          className={("sign-up-inner", "outer")}
           path="/signup"
           element={
             <Signup currentUser={currentUser} setCurrentUser={setCurrentUser} />

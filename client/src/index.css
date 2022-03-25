@@ -90,3 +90,10 @@ code {
   height: 90vh;
   overflow: auto;
 }
+
+.site-logo {
+  border: red solid;
+  width: 10px;
+  height: 100%;
+  background-image: url(https://cdn.dribbble.com/users/3819719/screenshots/14917636/aset_20.jpg);
+}
