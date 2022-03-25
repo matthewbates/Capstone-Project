@@ -72,10 +72,12 @@ code {
 }
 
 .gear-garage-title {
+  overflow: auto;
   text-align: center;
 }
 
 .gear-garage-styling {
+  overflow: auto;
   display: flex;
   text-align: center;
   margin-top: auto;
@@ -83,6 +85,7 @@ code {
 }
 
 .gear-item-styling {
+  overflow: auto;
   text-align: center;
 }
 
@@ -92,8 +95,5 @@ code {
 }
 
 .site-logo {
-  border: red solid;
-  width: 10px;
-  height: 100%;
-  background-image: url(https://cdn.dribbble.com/users/3819719/screenshots/14917636/aset_20.jpg);
+  background-color: black;
 }

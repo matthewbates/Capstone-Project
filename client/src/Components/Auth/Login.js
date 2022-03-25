@@ -77,7 +77,7 @@ function Login({ setCurrentUser, currentUser }) {
             </Button>
             <br />
             <div>
-              Don't have an Account? <Link to="/signup">Sign Up</Link>
+              <Link to="/signup">Not registered? It's free!</Link>
             </div>
             <div>
               Forgot <Link to="/password_reset">Password?</Link>

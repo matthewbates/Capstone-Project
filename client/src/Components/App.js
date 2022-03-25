@@ -68,12 +68,19 @@ function App() {
     <BrowserRouter>
       <Navbar collapseOnSelect expand="sm" bg="dark" variant="dark">
         <Container fluid className="mx-3 align-items-center me-auto">
-          {/* input Navbar image after MVP */}
-          <Navbar.Brand as={Link} to="/home">
-            {/* add className after MVP */}
-
-            <h3> 🏔 {currentUser ? `Welcome, ${currentUser.username}!` : ""}</h3>
+          <Nav.Link as={Link} to="/home">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-uzemmcG5znjhdDHmWdrB0DoJ6Db-pIXuPQ&usqp=CAU"
+              width="auto"
+              height="60px"
+              className="site-logo"
+              alt="Mountain logo"
+            />
+          </Nav.Link>
+          <Navbar.Brand>
+            <h3> {currentUser ? `Welcome, ${currentUser.username}!` : ""}</h3>
           </Navbar.Brand>
+
           <div>
             <Navbar>
               <Nav.Link as={Link} to="/map">

@@ -1,5 +1,14 @@
 import React, { useState } from "react";
 import { Carousel, Container, Row, Col, Card, Button } from "react-bootstrap";
+import {
+  MDBCard,
+  MDBCardImage,
+  MDBCardBody,
+  MDBCardTitle,
+  MDBCardText,
+  MDBRow,
+  MDBCol,
+} from "mdb-react-ui-kit";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import { SliderData } from "./SliderData";
@@ -16,8 +25,8 @@ function SwapShop({
 }) {
   return (
     <>
-    <Col>
-      {/* <Col sm={12} md={12} lg={6} className="gap-3 mb-5 mt-5"> */}
+      <Col>
+        {/* <Col sm={12} md={12} lg={6} className="gap-3 mb-5 mt-5"> */}
         <Card style={{ width: "20rem" }}>
           <Carousel>
             <Carousel.Item>
