@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Search from "./Searches/HikeSearch";
-import Footer from "./Footer";
+import Footer from "./Footer Info/Footer";
 // IMPORT TRAIL INFO HERE INTO BOOTSTRAP CONTAINERS SO A USER CAN QUICKLY SEARCH FOR A HIKE
 
 function Home({ search, setter }) {

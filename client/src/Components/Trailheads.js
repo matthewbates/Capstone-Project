@@ -105,49 +105,47 @@ function Trailheads({
   };
 
   return (
-    <div>
-      <div className="google-styling">
-        <LoadScript googleMapsApiKey="AIzaSyD4G8pUuPzvq_CQ9wdT5eOJpGG4ywQtFsY">
-          <GoogleMap
-            mapContainerStyle={mapStyles}
-            zoom={11.5}
-            center={currentPosition}
-          >
-            {locations.map((item) => {
-              return (
-                <Marker
-                  key={item.name}
-                  position={item.location}
-                  currentPostition={currentPosition}
-                  icon={{
-                    url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-                  }}
-                  onClick={() => onSelect(item)}
-                />
-              );
-            })}
-            {selected.location && (
-              <InfoWindow
-                position={selected.location}
-                clickable={true}
-                onCloseClick={() => setSelected({})}
-              >
-                <div>
-                  <b>{selected.name}</b> <br />
-                  <Button
-                    size="sm"
-                    className="mx-auto"
-                    as={Link}
-                    to={`/trail_info_list/${selected.id}`}
-                  >
-                    Details
-                  </Button>
-                </div>
-              </InfoWindow>
-            )}
-          </GoogleMap>
-        </LoadScript>
-      </div>
+    <div className="google-styling">
+      <LoadScript googleMapsApiKey="AIzaSyD4G8pUuPzvq_CQ9wdT5eOJpGG4ywQtFsY">
+        <GoogleMap
+          mapContainerStyle={mapStyles}
+          zoom={11.5}
+          center={currentPosition}
+        >
+          {locations.map((item) => {
+            return (
+              <Marker
+                key={item.name}
+                position={item.location}
+                currentPostition={currentPosition}
+                icon={{
+                  url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+                }}
+                onClick={() => onSelect(item)}
+              />
+            );
+          })}
+          {selected.location && (
+            <InfoWindow
+              position={selected.location}
+              clickable={true}
+              onCloseClick={() => setSelected({})}
+            >
+              <div>
+                <b>{selected.name}</b> <br />
+                <Button
+                  size="sm"
+                  className="mx-auto"
+                  as={Link}
+                  to={`/trail_info_list/${selected.id}`}
+                >
+                  Details
+                </Button>
+              </div>
+            </InfoWindow>
+          )}
+        </GoogleMap>
+      </LoadScript>
     </div>
   );
 }
