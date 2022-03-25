@@ -38,11 +38,11 @@ function Signup({ setCurrentUser, currentUser }) {
   }
 
   return (
-    <div className="body_of_form">
+    <div className="body-of-form">
       {currentUser ? <Navigate to="/Home" /> : null}
       <Container>
         <div className="pt-5">
-          <Form className="outer inner">
+          <Form className="outer sign-up-inner">
             <br></br>
             <h2>Register Account</h2>
             <Form.Group className="mb-3" controlId="formFirstName">
@@ -106,11 +106,11 @@ function Signup({ setCurrentUser, currentUser }) {
             <Button onClick={handleSignup} variant="primary">
               Create Account
             </Button>
+            <br></br>
+            <div className="already-have-account">
+              Already have an account? <Link to="/">Sign In</Link>
+            </div>
           </Form>
-          <br></br>
-          <div>
-            Already have an account? <Link to="/">Sign In</Link>
-          </div>
         </div>
       </Container>
     </div>

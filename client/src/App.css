@@ -1,7 +1,8 @@
-backpacking-gear-checklist {
-  align-items: center;
-}
+@import "compass/css3";
 
-/* item-columns {
-  columns: 2 auto;
-} */
+.trail-info-styling {
+  font-family:'Times New Roman', Times, serif;
+  text-align: center;
+  background: black;
+  
+}

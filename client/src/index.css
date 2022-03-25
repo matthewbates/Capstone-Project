@@ -1,13 +1,92 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.already-have-account {
+  text-align: center;
+  block-size: center;
+}
+
+.body-of-form {
+  overflow: hidden;
+  transition: all 4s;
+  transform-origin: 0 0;
+  /* background: linear-gradient(to bottom, #bc7012, #efd002 100%); */
+  background-image: url(https://i0.wp.com/kdvr.com/wp-content/uploads/sites/11/2020/09/GettyImages-478656454-1.jpg?w=2000&ssl=1);
+  /* min-height: 100%; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+.login-inner {
+  max-width: 450px;
+  margin: auto;
+  margin-top: 21vh;
+  background: #ffffff;
+  box-shadow: 0px 14px 80px rgba(178, 179, 206, 0.2);
+  padding: 40px 55px 45px 55px;
+  border-radius: 15px;
+  transition: all 0.3s;
+}
+
+.sign-up-inner {
+  max-width: 450px;
+  margin: auto;
+  margin-top: 11vh;
+  background: #ffffff;
+  box-shadow: 0px 14px 80px rgba(178, 179, 206, 0.2);
+  padding: 40px 55px 45px 55px;
+  border-radius: 15px;
+  transition: all 0.3s;
+}
+
+.outer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+  border-radius: 10px;
+}
+
+.google-styling {
+  overflow: auto;
+  margin: 10px 50px;
+  filter: drop-shadow(-20px 20px 3px #ccc);
+  margin-top: 30px;
+  text-align: center;
+}
+
+.gear-garage-title {
+  text-align: center;
+}
+
+.gear-garage-styling {
+  display: flex;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.gear-item-styling {
+  text-align: center;
+}
+
+.body-of-swap-shop {
+  height: 90vh;
+  overflow: auto;
 }

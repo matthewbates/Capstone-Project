@@ -8,6 +8,12 @@ class GearsController < ApplicationController
     render json: gear, status: :ok
   end
 
+  def destroy
+    gear = find_gear
+    gear.destroy
+    head :no_content
+  end
+
   private
 
   def find_gear

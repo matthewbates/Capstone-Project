@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Container, Row } from "react-bootstrap";
 import SwapShop from "./SwapShop";
 import Search from "./Searches/SwapSearch";
@@ -21,7 +21,7 @@ function SwapShopList({
     );
 
   return (
-    <>
+    <div className="body-of-swap-shop">
       <h2>Swap/Shop</h2>
       <Container>
         <Search
@@ -52,7 +52,7 @@ function SwapShopList({
         </Row>
       </Container>
       <Container style={{ width: "4rem", height: "4rem" }}></Container>
-    </>
+    </div>
   );
 }
 

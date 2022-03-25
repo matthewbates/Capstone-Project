@@ -1,16 +1,13 @@
 import React, { useState } from "react";
-import { Form, Button, Container } from "react-bootstrap";
+import { Form, Button, Container, Input } from "react-bootstrap";
 import { Link, Navigate } from "react-router-dom";
 
 function Login({ setCurrentUser, currentUser }) {
   // Login state
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  // Submit login credentials to db
 
-  function handleReset() {
-    return setUsername(""), setPassword("");
-  }
+  // Submit login credentials to db
 
   function handleLogin(e) {
     //assign login to for values stored in state | then post req
@@ -38,12 +35,12 @@ function Login({ setCurrentUser, currentUser }) {
   }
 
   return (
-    <div className="body_of_form">
+    <div className="body-of-form">
       {/* Ternary used to verify currentUser | true navigates to home / false null */}
       {currentUser ? <Navigate to="/home" /> : null}
       <Container>
         <div className="pt-5">
-          <Form className="outer inner">
+          <Form className="login-inner outer">
             <br></br>
             <h2>Welcome Back!</h2>
             {/* user log in form */}
@@ -63,15 +60,27 @@ function Login({ setCurrentUser, currentUser }) {
                 placeholder="Password"
               />
             </Form.Group>
+            <div className="form-check">
+              <div>
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  id="customCheck1"
+                />
+                <label class="form-check-label" for="flexCheckDefault">
+                  Remember Me
+                </label>
+              </div>
+            </div>
             <Button onClick={handleLogin} variant="primary" to="/login">
               Log In
-            </Button>{" "}
-            <Button onClick={handleReset}>Reset</Button>
+            </Button>
             <br />
-            {/* style this so it is next to the log in button after MVP */}
-            {/* add classname for styling, too */}
             <div>
-              Don't have an account? <Link to="/signup">Sign Up</Link>
+              Don't have an Account? <Link to="/signup">Sign Up</Link>
+            </div>
+            <div>
+              Forgot <Link to="/password_reset">Password?</Link>
             </div>
           </Form>
         </div>

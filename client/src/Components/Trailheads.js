@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import TrailInfoList from "./TrailInfoList";
 import TrailInfo from "./TrailInfo";
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button, CloseButton, Spinner } from "react-bootstrap";
 
 import {
   GoogleMap,
@@ -12,7 +12,7 @@ import {
 } from "@react-google-maps/api";
 
 const mapStyles = {
-  height: "90vh",
+  height: "85vh",
   width: "100%",
 };
 
@@ -26,8 +26,8 @@ function Trailheads({
   handleSelect,
 }) {
   const [selected, setSelected] = useState({});
-
   const [currentPosition, setCurrentPosition] = useState({});
+  const [done, setDone] = useState(undefined);
 
   const success = (position) => {
     const currentPosition = {
@@ -105,43 +105,49 @@ function Trailheads({
   };
 
   return (
-    <div className="google_styling">
-      <LoadScript googleMapsApiKey="AIzaSyD4G8pUuPzvq_CQ9wdT5eOJpGG4ywQtFsY">
-        <GoogleMap
-          mapContainerStyle={mapStyles}
-          zoom={12.5}
-          center={currentPosition}
-        >
-          {locations.map((item) => {
-            return (
-              <Marker
-                key={item.name}
-                position={item.location}
-                currentPostition={currentPosition}
-                onClick={() => onSelect(item)}
-              />
-            );
-          })}
-          {selected.location && (
-            <InfoWindow
-              position={selected.location}
-              clickable={true}
-              onCloseClick={() => setSelected({})}
-            >
-              <div>
-                <b>{selected.name}</b>{" "}
-                <Button
-                  className="mx-auto"
-                  as={Link}
-                  to={`/trail_info_list/${selected.id}`}
-                >
-                  Details
-                </Button>
-              </div>
-            </InfoWindow>
-          )}
-        </GoogleMap>
-      </LoadScript>
+    <div>
+      <div className="google-styling">
+        <LoadScript googleMapsApiKey="AIzaSyD4G8pUuPzvq_CQ9wdT5eOJpGG4ywQtFsY">
+          <GoogleMap
+            mapContainerStyle={mapStyles}
+            zoom={11.5}
+            center={currentPosition}
+          >
+            {locations.map((item) => {
+              return (
+                <Marker
+                  key={item.name}
+                  position={item.location}
+                  currentPostition={currentPosition}
+                  icon={{
+                    url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+                  }}
+                  onClick={() => onSelect(item)}
+                />
+              );
+            })}
+            {selected.location && (
+              <InfoWindow
+                position={selected.location}
+                clickable={true}
+                onCloseClick={() => setSelected({})}
+              >
+                <div>
+                  <b>{selected.name}</b> <br />
+                  <Button
+                    size="sm"
+                    className="mx-auto"
+                    as={Link}
+                    to={`/trail_info_list/${selected.id}`}
+                  >
+                    Details
+                  </Button>
+                </div>
+              </InfoWindow>
+            )}
+          </GoogleMap>
+        </LoadScript>
+      </div>
     </div>
   );
 }

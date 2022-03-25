@@ -5,6 +5,7 @@ import Packlist from "./Packlist";
 import {
   Container,
   Col,
+  Row,
   Button,
   Card,
   ListGroup,
@@ -21,44 +22,50 @@ function GearGarage({ currentUser, SetCurrentUser, gearTypes, handleSelect }) {
 
   return (
     <div>
-      <h2>What Gear Will I Need?</h2>
-      <Container>
-        <Col>
-          {gearTypes.map((type) => {
-            const list = type.gears.map((gear) => {
-              return (
-                <div key={gear.id}>
-                  <ListGroup>{gear.name}</ListGroup>
-                </div>
-              );
-            });
-
+      <u>
+        <h2 className="gear-garage-title">Add Gear To Your Packlist!</h2>
+      </u>
+      <Col className="gear-garage-styling">
+        {gearTypes.map((type) => {
+          const list = type.gears.map((gear) => {
             return (
-              // make buttons to add to packlist
-              <div key={type.id}>
-                <Card.Text>{type.name}</Card.Text>
-                <Container>
-                  {list.map((gearItem) => (
-                    <div key={gearItem.id}>
-                      <Button
-                        variant="success"
-                        onClick={() =>
-                          // selectedGearTypes is the CURRENT STATE; for this item that we clicked on, add it to a list that includes everything that's currently in state
-                          handleSelect((selectedGearTypes) => {
-                            return [gearItem, ...selectedGearTypes];
-                          })
-                        }
-                      >
-                        {gearItem}
-                      </Button>
-                    </div>
-                  ))}
-                </Container>
-              </div>
+              <Container
+                sm={12}
+                md={12}
+                lg={6}
+                className="gap-3 mb-2 mt-2"
+                key={gear.id}
+                id={gear.id}
+              >
+                <ListGroup>{gear.name}</ListGroup>
+              </Container>
             );
-          })}
-        </Col>
-      </Container>
+          });
+          return (
+            // make buttons to add to packlist
+            <div key={type.id}>
+              <Card.Text>{type.name}</Card.Text>
+              <Container className="gear-item-styling">
+                {list.map((gearItem) => (
+                  <div key={gearItem.id}>
+                    <br />
+                    <Button
+                      onClick={() =>
+                        // selectedGearTypes is the CURRENT STATE; for this item that we clicked on, add it to a list that includes everything that's currently in state
+                        handleSelect((selectedGearTypes) => {
+                          return [gearItem, ...selectedGearTypes];
+                        })
+                      }
+                    >
+                      {gearItem}
+                    </Button>
+                  </div>
+                ))}
+              </Container>
+            </div>
+          );
+        })}
+      </Col>
     </div>
   );
 }

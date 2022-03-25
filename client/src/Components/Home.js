@@ -10,7 +10,7 @@ function Home({ search, setter }) {
   }
 
   return (
-    <div>
+    <div className="hello">
       <h1>Hello, this is the home page</h1>
       {/* on the home page, return the trail info component so a user can search for a hike quickly */}
       <p>quickly search for hikes in your area</p>

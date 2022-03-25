@@ -16,35 +16,46 @@ function SwapShop({
 }) {
   return (
     <>
-      <Card style={{ width: "18rem" }}>
-        <Carousel>
-          <Carousel.Item>
-            <img className="d-block w-100" src={image_one} alt="First slide" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="d-block w-100" src={image_two} alt="Second slide" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={image_three}
-              alt="Third slide"
-            />
-          </Carousel.Item>
-        </Carousel>
+    <Col>
+      {/* <Col sm={12} md={12} lg={6} className="gap-3 mb-5 mt-5"> */}
+        <Card style={{ width: "20rem" }}>
+          <Carousel>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={image_one}
+                alt="First slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={image_two}
+                alt="Second slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={image_three}
+                alt="Third slide"
+              />
+            </Carousel.Item>
+          </Carousel>
 
-        <Card.Body>
-          <Card.Title>{name}</Card.Title>
+          <Card.Body>
+            <Card.Title>{name}</Card.Title>
 
-          <Card.Text>
-            <b>${price}</b> | <b>{category}</b>
-          </Card.Text>
+            <Card.Text>
+              <b>${price}</b> | <b>{category}</b>
+            </Card.Text>
 
-          <Card.Text>{description}</Card.Text>
+            <Card.Text>{description}</Card.Text>
 
-          <Button variant="primary">Contact Seller</Button>
-        </Card.Body>
-      </Card>
+            <Button variant="primary">Contact Seller</Button>
+          </Card.Body>
+        </Card>
+      </Col>
     </>
   );
 }
