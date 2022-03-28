@@ -118,10 +118,11 @@ function Trailheads({
                 key={item.name}
                 position={item.location}
                 currentPostition={currentPosition}
-                icon={{
-                  url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-                }}
-                onClick={() => onSelect(item)}
+                // icon={{
+                //   url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+                // }}
+                onMouseOver={() => onSelect(item)}
+                // figure out how to do onMouseOut
               />
             );
           })}

@@ -97,3 +97,28 @@ code {
 .site-logo {
   background-color: black;
 }
+
+.home-page {
+  background-image: url("./Assets/good\ friends.JPG");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+.home-footer {
+  margin-top: 4rem;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navbar-styling {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}

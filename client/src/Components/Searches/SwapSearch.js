@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {
   Container,
   Col,
+  Row,
   DropdownButton,
   Dropdown,
   ButtonGroup,
@@ -31,16 +32,19 @@ function Search({
 
   return (
     <Container>
-      <div className="input-grou- pt-5 col-8">
-        <input
-          type="text"
-          className="form-control-rounded"
-          arial-label="Search"
-          aria-describedby="search-addon"
-          value={search}
-          placeholder="Search By Item"
-          onChange={renderSwapShopSearch}
-        />
+      <Row>
+        <Col>
+          <input
+            type="text"
+            className="form-control-rounded"
+            arial-label="Search"
+            aria-describedby="search-addon"
+            value={search}
+            placeholder="Search By Item"
+            onChange={renderSwapShopSearch}
+          ></input>
+        </Col>
+
         <Col>
           <DropdownButton
             title={catSearch == "" ? "All Categories" : catSearch}
@@ -59,7 +63,8 @@ function Search({
               Sleep Systems
             </Dropdown.Item>
           </DropdownButton>
-
+        </Col>
+        <Col>
           <DropdownButton
             id="dropdown-basic-button"
             title="Search By Price"
@@ -72,7 +77,7 @@ function Search({
             <Dropdown.Item eventKey="201-400">201-400</Dropdown.Item>
           </DropdownButton>
         </Col>
-      </div>
+      </Row>
     </Container>
   );
 }

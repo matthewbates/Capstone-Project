@@ -10,6 +10,7 @@ import TrailInfoList from "./TrailInfoList";
 import SwapShopList from "./SwapShopList";
 import UserPage from "./Auth/UserPage";
 import Home from "./Home";
+import Disclaimer from "./Disclaimer";
 
 function App() {
   const [currentUser, setCurrentUser] = useState("");
@@ -67,7 +68,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar collapseOnSelect expand="sm" bg="dark" variant="dark">
-        <Container fluid className="mx-3 align-items-center me-auto">
+        <Container fluid className="navbar-styling">
           <Nav.Link as={Link} to="/home">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-uzemmcG5znjhdDHmWdrB0DoJ6Db-pIXuPQ&usqp=CAU"
@@ -84,7 +85,7 @@ function App() {
           <div>
             <Navbar>
               <Nav.Link as={Link} to="/map">
-                Trailheads
+                Hikes
               </Nav.Link>
               <Nav.Link as={Link} to="/packlist">
                 Packlist
@@ -98,6 +99,7 @@ function App() {
               <Nav.Link as={Link} to="/userpage">
                 Profile
               </Nav.Link>
+              <Nav.Link as={Link} to="/disclaimer"></Nav.Link>
               <div>
                 {!currentUser ? (
                   <Button as={Link} to="/">
@@ -209,6 +211,7 @@ function App() {
             />
           }
         />
+        <Route path="/disclaimer" element={<Disclaimer />}></Route>
       </Routes>
     </BrowserRouter>
   );

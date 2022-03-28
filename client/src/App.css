@@ -1,8 +1,19 @@
 @import "compass/css3";
 
 .trail-info-styling {
-  font-family:'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   text-align: center;
   background: black;
-  
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
