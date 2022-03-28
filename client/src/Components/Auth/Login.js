@@ -67,7 +67,7 @@ function Login({ setCurrentUser, currentUser }) {
                   type="checkbox"
                   id="customCheck1"
                 />
-                <label class="form-check-label" for="flexCheckDefault">
+                <label className="form-check-label" for="flexCheckDefault">
                   Remember Me
                 </label>
               </div>

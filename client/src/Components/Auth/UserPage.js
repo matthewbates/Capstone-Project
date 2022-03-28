@@ -9,18 +9,16 @@ function UserPage({ currentUser, setCurrentUser }) {
     `${currentUser ? currentUser.first_name : null}`
   );
   const [lastName, setLastName] = useState(
-    `${currentUser ? currentUser.first_name : null}`
-  );
-  const [email, setEmail] = useState(
     `${currentUser ? currentUser.last_name : null}`
   );
-  const [username, setUsername] = useState(
+  const [email, setEmail] = useState(
     `${currentUser ? currentUser.email : null}`
   );
-  const [password] = useState(`${currentUser ? currentUser.password : null}`);
-  const [passwordConfirmation] = useState(
-    `${currentUser ? currentUser.password_confirmation : null}`
+  const [username, setUsername] = useState(
+    `${currentUser ? currentUser.username : null}`
   );
+  const [password] = useState(currentUser.password);
+  const [passwordConfirmation] = useState(currentUser.password_confirmation);
 
   // Edit button state
   const [edit, setEdit] = useState(false);
@@ -36,8 +34,8 @@ function UserPage({ currentUser, setCurrentUser }) {
         last_name: lastName,
         email,
         username,
-        password,
-        password_confirmation: passwordConfirmation,
+        // password,
+        // password_confirmation: passwordConfirmation,
       }),
     })
       .then((r) => r.json())

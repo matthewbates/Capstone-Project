@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid, with: :invalid_params
 
   def show
-    current_user = User.find(session[:user_id])
+    current_user = User.find(session[:id])
     render json: current_user, status: :ok
   end
 
@@ -16,9 +16,10 @@ class UsersController < ApplicationController
   def update
     user = User.find(params[:id])
 
-    user.update(user_params)
+    user.update(update_params)
     render json: user, status: :ok
   end
+
   def destroy
     user = User.find(params[:id])
     user.destroy
@@ -45,5 +46,9 @@ class UsersController < ApplicationController
       :password,
       :password_confirmation,
     )
+  end
+
+  def update_params
+    params.permit(:first_name, :last_name, :email, :username)
   end
 end
