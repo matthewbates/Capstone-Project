@@ -6,6 +6,7 @@ import { Button, CloseButton, Spinner } from "react-bootstrap";
 
 import {
   GoogleMap,
+  // look for boolean value that shows if it is loaded or not
   LoadScript,
   Marker,
   InfoWindow,
@@ -122,7 +123,6 @@ function Trailheads({
                 //   url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
                 // }}
                 onMouseOver={() => onSelect(item)}
-                // figure out how to do onMouseOut
               />
             );
           })}

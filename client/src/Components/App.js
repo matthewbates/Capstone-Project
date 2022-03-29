@@ -67,50 +67,60 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navbar collapseOnSelect expand="sm" bg="dark" variant="dark">
+      <Navbar
+        collapseOnSelect
+        expand="sm"
+        style={{ backgroundColor: "black" }}
+        variant="dark"
+      >
         <Container fluid className="navbar-styling">
-          <Nav.Link as={Link} to="/home">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-uzemmcG5znjhdDHmWdrB0DoJ6Db-pIXuPQ&usqp=CAU"
-              width="auto"
-              height="60px"
-              className="site-logo"
-              alt="Mountain logo"
-            />
-          </Nav.Link>
+          {currentUser ? (
+            <>
+              <Nav.Link className="navbar-logo" as={Link} to="/home">
+                <img
+                  src="https://cdn.dribbble.com/users/1261007/screenshots/15688663/media/33791b2400e4462ae644d8557e2bbb8c.png?compress=1&resize=400x300&vertical=top"
+                  width="auto"
+                  height="60px"
+                  className="site-logo"
+                  alt="Mountain logo"
+                />
+              </Nav.Link>
+            </>
+          ) : null}
           <Navbar.Brand>
-            <h3> {currentUser ? `Welcome, ${currentUser.username}!` : ""}</h3>
+            <h4> {currentUser ? `Welcome, ${currentUser.username}!` : ""}</h4>
           </Navbar.Brand>
 
           <div>
             <Navbar>
-              <Nav.Link as={Link} to="/map">
-                Hikes
-              </Nav.Link>
-              <Nav.Link as={Link} to="/packlist">
-                Packlist
-              </Nav.Link>
-              <Nav.Link as={Link} to="/gear_garage">
-                Gear Garage
-              </Nav.Link>
-              <Nav.Link as={Link} to="/swap_shop_list">
-                Swap/Shop
-              </Nav.Link>
-              <Nav.Link as={Link} to="/userpage">
-                Profile
-              </Nav.Link>
-              <Nav.Link as={Link} to="/disclaimer"></Nav.Link>
-              <div>
-                {!currentUser ? (
-                  <Button as={Link} to="/">
-                    Login
-                  </Button>
-                ) : (
+              {currentUser ? (
+                <>
+                  <Nav.Link as={Link} to="/map">
+                    Hikes
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/packlist">
+                    Checklist
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/gear_garage">
+                    Gear Garage
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/swap_shop_list">
+                    Swap/Shop
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/userpage">
+                    Profile
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/disclaimer"></Nav.Link>
+                </>
+              ) : null}
+              {/* should this be a div? */}
+              <>
+                {!currentUser ? null : (
                   <Button onClick={handleLogout} as={Link} to="/">
                     Log out
                   </Button>
                 )}
-              </div>
+              </>
             </Navbar>
           </div>
         </Container>
@@ -168,6 +178,8 @@ function App() {
               setter={setSearch}
               catSearch={catSearch}
               catSetter={setCatSearch}
+              priceSearch={priceSearch}
+              priceSetter={setPriceSearch}
             />
           }
         ></Route>

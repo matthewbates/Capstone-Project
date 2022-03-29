@@ -22,50 +22,61 @@ function GearGarage({ currentUser, SetCurrentUser, gearTypes, handleSelect }) {
 
   return (
     <div>
-      <u>
-        <h2 className="gear-garage-title">Add Gear To Your Packlist!</h2>
-      </u>
-      <Col className="gear-garage-styling">
-        {gearTypes.map((type) => {
-          const list = type.gears.map((gear) => {
+      <p>Welcome to the Gear Garage.</p>
+      <p>
+        Whether you're setting out for a dayhike or a several day excursion, use
+        this page to add the items you'll want to bring along with you
+      </p>
+      <p>
+        If it's your first time in the elements, it might be best to borrow or
+        rent some of these items. As you become a more experienced outdoorsman,
+        you'll find that a lot of the fun is derived in figuring out what to
+        bring along to meet your particular needs.
+      </p>
+      <div>
+        <Col className="gear-garage-styling">
+          {gearTypes.map((type) => {
+            const list = type.gears.map((gear) => {
+              return (
+                <Container
+                  sm={12}
+                  md={12}
+                  lg={6}
+                  className="gap-3 mb-2 mt-2"
+                  key={gear.id}
+                  id={gear.id}
+                >
+                  <ListGroup>{gear.name}</ListGroup>
+                </Container>
+              );
+            });
             return (
-              <Container
-                sm={12}
-                md={12}
-                lg={6}
-                className="gap-3 mb-2 mt-2"
-                key={gear.id}
-                id={gear.id}
-              >
-                <ListGroup>{gear.name}</ListGroup>
-              </Container>
+              // make buttons to add to packlist
+              <div className="full-gear-garage" key={type.id}>
+                <h5>{type.name}</h5>
+                {/* <hr></hr> */}
+                <Container className="gear-item-styling">
+                  {list.map((gearItem) => (
+                    <div key={gearItem.id}>
+                      <br />
+                      <Button
+                        className="gear-garage-buttons"
+                        onClick={() =>
+                          handleSelect((selectedGearTypes) => {
+                            return [gearItem, ...selectedGearTypes];
+                          })
+                        }
+                      >
+                        {gearItem}
+                      </Button>
+                    </div>
+                  ))}
+                </Container>
+              </div>
             );
-          });
-          return (
-            // make buttons to add to packlist
-            <div key={type.id}>
-              <Card.Text>{type.name}</Card.Text>
-              <Container className="gear-item-styling">
-                {list.map((gearItem) => (
-                  <div key={gearItem.id}>
-                    <br />
-                    <Button
-                      onClick={() =>
-                        // selectedGearTypes is the CURRENT STATE; for this item that we clicked on, add it to a list that includes everything that's currently in state
-                        handleSelect((selectedGearTypes) => {
-                          return [gearItem, ...selectedGearTypes];
-                        })
-                      }
-                    >
-                      {gearItem}
-                    </Button>
-                  </div>
-                ))}
-              </Container>
-            </div>
-          );
-        })}
-      </Col>
+          })}
+        </Col>
+      </div>
     </div>
   );
 }

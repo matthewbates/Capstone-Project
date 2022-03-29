@@ -60,18 +60,7 @@ function Login({ setCurrentUser, currentUser }) {
                 placeholder="Password"
               />
             </Form.Group>
-            <div className="form-check">
-              <div>
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="customCheck1"
-                />
-                <label className="form-check-label" for="flexCheckDefault">
-                  Remember Me
-                </label>
-              </div>
-            </div>
+            <div className="form-check"></div>
             <Button onClick={handleLogin} variant="primary" to="/login">
               Log In
             </Button>

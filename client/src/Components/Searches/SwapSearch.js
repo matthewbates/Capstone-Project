@@ -6,7 +6,9 @@ import {
   DropdownButton,
   Dropdown,
   ButtonGroup,
+  Button,
 } from "react-bootstrap";
+import { MDBCol, MDBRow } from "mdb-react-ui-kit"; 
 
 function Search({
   search,
@@ -26,8 +28,8 @@ function Search({
     console.log(event);
   }
 
-  function handlePriceSelect(event) {
-    priceSetter(event.target.value);
+  function handlePriceSelect(priceRange) {
+    priceSetter(priceRange);
   }
 
   return (
@@ -71,11 +73,15 @@ function Search({
             onSelect={handlePriceSelect}
           >
             {/* GET SEARCH BY PRICE TO WORK */}
-            <Dropdown.Item eventKey="80">80</Dropdown.Item>
+            <Dropdown.Item eventKey="">Any</Dropdown.Item>
+            <Dropdown.Item eventKey="0-50">0-50</Dropdown.Item>
             <Dropdown.Item eventKey="51-100">51-100</Dropdown.Item>
             <Dropdown.Item eventKey="101-200">101-200</Dropdown.Item>
             <Dropdown.Item eventKey="201-400">201-400</Dropdown.Item>
-          </DropdownButton>
+          </DropdownButton>{" "}
+          <Col>
+            <Button>Reset Search</Button>
+          </Col>
         </Col>
       </Row>
     </Container>

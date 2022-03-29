@@ -25,9 +25,30 @@ function Packlist({ selectedGearTypes, deleteGear }) {
             </ListGroup>
           </Card>
         </Col>
+        {/* rails g resource for packlist */}
+        <Button>Save Packlist</Button>
       </Container>
       {/* put a save button; goes to back end */}
     </div>
+    // <div>
+    //   <Container>
+    //     <Col>
+    //       <Card border="primary" style={{ width: "18rem" }}>
+    //         <Card.Header className="bg-color dark">My PackList</Card.Header>
+    //         <ListGroup horizontal>
+    //           {selectedGearTypes.map((selectedGear) => (
+    //             <Button onClick={() => deleteGear(selectedGear.id)}>
+    //               <ListGroup.Item>{selectedGear}</ListGroup.Item>
+    //             </Button>
+    //           ))}
+    //         </ListGroup>
+    //       </Card>
+    //     </Col>
+    //     {/* rails g resource for packlist */}
+    //     <Button>Save Packlist</Button>
+    //   </Container>
+    //   {/* put a save button; goes to back end */}
+    // </div>
   );
 }
 

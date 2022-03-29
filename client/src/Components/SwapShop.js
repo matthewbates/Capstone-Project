@@ -8,10 +8,13 @@ import {
   MDBCardText,
   MDBRow,
   MDBCol,
+  MDBCarouselItem,
+  MDBCarouselElement,
 } from "mdb-react-ui-kit";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import { SliderData } from "./SliderData";
+import { Fragment } from "react";
 
 function SwapShop({
   id,
@@ -24,48 +27,37 @@ function SwapShop({
   category,
 }) {
   return (
-    <>
-      <Col>
-        {/* <Col sm={12} md={12} lg={6} className="gap-3 mb-5 mt-5"> */}
-        <Card style={{ width: "20rem" }}>
-          <Carousel>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={image_one}
-                alt="First slide"
-              />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={image_two}
-                alt="Second slide"
-              />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={image_three}
-                alt="Third slide"
-              />
-            </Carousel.Item>
-          </Carousel>
+    <MDBCol>
+      <MDBCard>
+        <Carousel>
+          <Carousel.Item>
+            <img className="d-block w-100" src={image_one} alt="First slide" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="d-block w-100" src={image_two} alt="Second slide" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={image_three}
+              alt="Third slide"
+            />
+          </Carousel.Item>
+        </Carousel>
 
-          <Card.Body>
-            <Card.Title>{name}</Card.Title>
+        <MDBCardBody>
+          <MDBCardTitle>{name}</MDBCardTitle>
 
-            <Card.Text>
-              <b>${price}</b> | <b>{category}</b>
-            </Card.Text>
+          <MDBCardText>
+            <b>${price}</b> | <b>{category}</b>
+          </MDBCardText>
 
-            <Card.Text>{description}</Card.Text>
+          <MDBCardText>{description}</MDBCardText>
 
-            <Button variant="primary">Contact Seller</Button>
-          </Card.Body>
-        </Card>
-      </Col>
-    </>
+          <Button variant="primary">Contact Seller</Button>
+        </MDBCardBody>
+      </MDBCard>
+    </MDBCol>
   );
 }
 

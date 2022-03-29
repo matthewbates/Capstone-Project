@@ -99,7 +99,6 @@ function UserPage({ currentUser, setCurrentUser }) {
                                     onChange={(e) =>
                                       setFirstName(e.target.value)
                                     }
-                                    Placeholder={currentUser.first_name}
                                   />
                                 </div>
                               ) : (
@@ -118,7 +117,6 @@ function UserPage({ currentUser, setCurrentUser }) {
                                     onChange={(e) =>
                                       setLastName(e.target.value)
                                     }
-                                    Placeholder={currentUser.last_name}
                                   />
                                 </div>
                               ) : (
@@ -133,7 +131,6 @@ function UserPage({ currentUser, setCurrentUser }) {
                                     id="inputPassword5"
                                     aria-describedby="passwordHelpBlock"
                                     onChange={(e) => setEmail(e.target.value)}
-                                    Placeholder={currentUser.email}
                                   />
                                 </div>
                               ) : (
@@ -150,7 +147,6 @@ function UserPage({ currentUser, setCurrentUser }) {
                                     onChange={(e) =>
                                       setUsername(e.target.value)
                                     }
-                                    Placeholder={currentUser.username}
                                   />
                                 </div>
                               ) : (

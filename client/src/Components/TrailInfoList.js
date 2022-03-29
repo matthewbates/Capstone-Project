@@ -2,14 +2,13 @@ import React, { useState, useEffect } from "react";
 import Trailheads from "./Trailheads";
 import TrailInfo from "./TrailInfo";
 import { useParams } from "react-router-dom";
-import { Spinner } from "react-bootstrap";
+import { MDBSpinner, MDBBtn } from "mdb-react-ui-kit";
 
 function TrailInfoList({ trailInfo, setTrailInfo }) {
   const [hike, setHike] = useState([]);
 
   // the variable of id is set to a particular hike instance
   const { id } = useParams();
-
   useEffect(() => {
     fetch(`/hikes/${id}`)
       .then((r) => r.json())
@@ -17,9 +16,10 @@ function TrailInfoList({ trailInfo, setTrailInfo }) {
   }, []);
   if (hike.length === 0) {
     return (
-      <Spinner animation="border" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </Spinner>
+      <MDBBtn className="center-loading-spinner" disabled>
+        <MDBSpinner size="sm" role="status" tag="span" className="me-2" />
+        Loading...
+      </MDBBtn>
     );
   }
 

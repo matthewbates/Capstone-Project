@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Container, Row } from "react-bootstrap";
 import SwapShop from "./SwapShop";
 import Search from "./Searches/SwapSearch";
+import { MDBRow } from "mdb-react-ui-kit";
 
 function SwapShopList({
   swapShop,
@@ -18,7 +19,21 @@ function SwapShopList({
     .filter((shop) => shop.item.toLowerCase().includes(search.toLowerCase()))
     .filter((shop) =>
       shop.catagory.toLowerCase().includes(catSearch.toLowerCase())
-    );
+    )
+    .filter((shop) => {
+      if (priceSearch) {
+        const price = shop.price;
+        // Number changes string into an integer
+        const bottomRange = Number(priceSearch.split("-")[0]);
+        const topRange = Number(priceSearch.split("-")[1]);
+        return (
+          // returns true/false if BOTH statements are true
+          bottomRange < price && topRange > price
+        );
+      } else {
+        return true;
+      }
+    });
 
   return (
     <div className="body-of-swap-shop">
@@ -35,7 +50,7 @@ function SwapShopList({
       </Container>
       <br />
       <Container>
-        <Row>
+        <MDBRow className="row-cols-1 row-cols-lg-2 g-4">
           {filteredSearch.map((shop) => (
             <SwapShop
               key={shop.id}
@@ -49,7 +64,7 @@ function SwapShopList({
               category={shop.catagory}
             />
           ))}
-        </Row>
+        </MDBRow>
       </Container>
       <Container style={{ width: "4rem", height: "4rem" }}></Container>
     </div>

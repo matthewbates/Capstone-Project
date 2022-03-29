@@ -16,51 +16,44 @@ function Footer({ currentUser }) {
   return (
     <div className="home-footer">
       <MDBFooter
-        className="text-center text-white"
-        style={{ backgroundColor: "#0a4275" }}
+        About
+        the
+        developer
+        className="text-center"
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.1" }}
       >
-        <MDBContainer className="p-4 pb-0">
-          <section>
-            <p className="d-flex justify-content-center align-items-center">
-              <span className="me-3">Not Registered?</span>
-              <Link to="/signup">Create an account</Link>
-            </p>
-          </section>
-        </MDBContainer>
-        <div
-          className="text-center p-3"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
-        >
-          <section className="mb-1">
-            <a>View developers':{" "}</a>
-            <a
-              className="btn btn-primary btn-floating m-1"
-              style={{ backgroundColor: "#C0C0C0" }}
-              href="https://medium.com/me/stories/public"
-              role="button"
-            >
-              <MDBIcon fab icon="linkedin-in" />
-              <b>Medium</b>
-            </a>
+        <div className="container p-4 pb-1">
+          <section className="mb-4">
+            <p className="footer-text">
+              <i>Developer Links</i>
+            </p>{" "}
             <a
               className="btn btn-primary btn-floating m-1"
               style={{ backgroundColor: "#0082ca" }}
               href="https://www.linkedin.com/in/matthew-bates-71b7bb79/"
               role="button"
+              size="lg"
             >
-              <MDBIcon fab icon="linkedin-in" />
-              <b>LinkedIn</b>
-            </a>
+              <MDBIcon fab icon="linkedin-in" size="lg" />
+            </a>{" "}
             <a
               className="btn btn-primary btn-floating m-1"
               style={{ backgroundColor: "#333333" }}
-              href="https://github.com/matthewbates"
+              href="#https://github.com/matthewbates"
               role="button"
+              size="lg"
             >
-              <MDBIcon fab icon="github" />
-              <b>GitHub</b>
+              <MDBIcon fab icon="github" size="lg" />
+            </a>{" "}
+            <a
+              className="btn btn-primary btn-floating m-1"
+              style={{ backgroundColor: "#bababa" }}
+              href="https://medium.com/me/stories/public"
+              role="button"
+              size="lg"
+            >
+              <MDBIcon fab icon="medium" size="lg" />
             </a>
-            {" "}<a>if you'd like to learn more.</a>
           </section>
         </div>
       </MDBFooter>
