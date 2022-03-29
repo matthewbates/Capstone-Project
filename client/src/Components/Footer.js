@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { Nav } from "react-bootstrap";
 import { NavLink, Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
@@ -13,6 +13,17 @@ import {
 import Disclaimer from "./Disclaimer";
 
 function Footer({ currentUser }) {
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    const timerID = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+    return function cleanup() {
+      clearInterval(timerID);
+    };
+  }, []);
+
   return (
     <div className="home-footer">
       <MDBFooter
@@ -20,13 +31,13 @@ function Footer({ currentUser }) {
         the
         developer
         className="text-center"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.1" }}
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.4" }}
       >
-        <div className="container p-4 pb-1">
+        <div className="container p-2 pb-0">
           <section className="mb-4">
-            <p className="footer-text">
-              <i>Developer Links</i>
-            </p>{" "}
+            <h6 className="footer-text text-light">
+              <b>Developer Links</b>
+            </h6>{" "}
             <a
               className="btn btn-primary btn-floating m-1"
               style={{ backgroundColor: "#0082ca" }}
@@ -56,6 +67,9 @@ function Footer({ currentUser }) {
             </a>
           </section>
         </div>
+        <b>
+          <p className="time-color">{time.toString()}</p>
+        </b>
       </MDBFooter>
     </div>
   );

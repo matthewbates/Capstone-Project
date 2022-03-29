@@ -28,7 +28,7 @@ function TrailInfo({
         <Image src={image} alt="route image" />
       </div>
       <Col className="bg-dark">
-        <Row sm={12} md={12} lg={12}>
+        <Row>
           <hr />
 
           <ListGroup

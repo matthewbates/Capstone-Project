@@ -9,11 +9,12 @@ import {
   Button,
   Card,
   ListGroup,
+  ListGroupItem,
   UnorderedListGroup,
 } from "react-bootstrap";
 import Checklist from "./Packlist";
 
-function GearGarage({ currentUser, SetCurrentUser, gearTypes, handleSelect }) {
+function GearGarage({ currentUser, gearTypes, handleSelect }) {
   const [addToPacklist, setAddToPacklist] = useState([]);
 
   function handleAddToPacklist(event) {
@@ -21,28 +22,34 @@ function GearGarage({ currentUser, SetCurrentUser, gearTypes, handleSelect }) {
   }
 
   return (
-    <div>
-      <p>Welcome to the Gear Garage.</p>
-      <p>
-        Whether you're setting out for a dayhike or a several day excursion, use
-        this page to add the items you'll want to bring along with you
-      </p>
-      <p>
-        If it's your first time in the elements, it might be best to borrow or
-        rent some of these items. As you become a more experienced outdoorsman,
-        you'll find that a lot of the fun is derived in figuring out what to
-        bring along to meet your particular needs.
-      </p>
-      <div>
-        <Col className="gear-garage-styling">
+    <Container className="gear-garage-background">
+      <br />
+      <div className="container">
+        <div className="image">
+          <img src="https://www.rei.com/dam/winter_camping_checklist_hero_lg.jpg" />
+        </div>
+        <div classname="text">
+          <p>Welcome to the Gear Garage.</p>
+          <p>
+            Whether you're setting out for a dayhike or a several day excursion,
+            use this page to add the items you'll want to bring along with you
+          </p>
+          <p>
+            If it's your first time in the elements, it might be best to borrow
+            or rent some of these items. As you become a more experienced
+            outdoorsman, you'll find that a lot of the fun is derived in
+            figuring out what to bring along to meet your particular needs.
+          </p>
+        </div>
+      </div>
+      <div className="gear-garage-styling">
+        {/* THIS CONTAINS ALL ELEMENTS */}
+        <Row>
           {gearTypes.map((type) => {
             const list = type.gears.map((gear) => {
               return (
                 <Container
-                  sm={12}
-                  md={12}
-                  lg={6}
-                  className="gap-3 mb-2 mt-2"
+                  className="gap-1 mb-1 mt-0"
                   key={gear.id}
                   id={gear.id}
                 >
@@ -51,33 +58,32 @@ function GearGarage({ currentUser, SetCurrentUser, gearTypes, handleSelect }) {
               );
             });
             return (
-              // make buttons to add to packlist
-              <div className="full-gear-garage" key={type.id}>
-                <h5>{type.name}</h5>
-                {/* <hr></hr> */}
-                <Container className="gear-item-styling">
-                  {list.map((gearItem) => (
-                    <div key={gearItem.id}>
-                      <br />
-                      <Button
-                        className="gear-garage-buttons"
-                        onClick={() =>
-                          handleSelect((selectedGearTypes) => {
-                            return [gearItem, ...selectedGearTypes];
-                          })
-                        }
-                      >
-                        {gearItem}
-                      </Button>
-                    </div>
-                  ))}
-                </Container>
+              <div className="full-gear-garage col-md-6" key={type.id}>
+                <h5>
+                  <br />
+                  <u>{type.name}</u>
+                </h5>
+                {list.map((gearItem) => (
+                  <div key={gearItem.id}>
+                    <Button
+                      horizontal
+                      className="gear-garage-buttons"
+                      onClick={() =>
+                        handleSelect((selectedGearTypes) => {
+                          return [gearItem, ...selectedGearTypes];
+                        })
+                      }
+                    >
+                      {gearItem}
+                    </Button>
+                  </div>
+                ))}
               </div>
             );
           })}
-        </Col>
+        </Row>
       </div>
-    </div>
+    </Container>
   );
 }
 

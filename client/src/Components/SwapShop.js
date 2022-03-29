@@ -10,6 +10,10 @@ import {
   MDBCol,
   MDBCarouselItem,
   MDBCarouselElement,
+  MDBCarousel,
+  MDBCarouselInner,
+  MDBAccordion,
+  MDBAccordionItem,
 } from "mdb-react-ui-kit";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
@@ -29,36 +33,65 @@ function SwapShop({
   return (
     <MDBCol>
       <MDBCard>
-        <Carousel>
-          <Carousel.Item>
-            <img className="d-block w-100" src={image_one} alt="First slide" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="d-block w-100" src={image_two} alt="Second slide" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={image_three}
-              alt="Third slide"
-            />
-          </Carousel.Item>
-        </Carousel>
+        <MDBCarousel showControls>
+          <MDBCarouselInner data-interval="false">
+            <MDBCarouselItem className="active">
+              <MDBCarouselElement
+                className="image-one-size"
+                src={image_one}
+                alt="..."
+              />
+            </MDBCarouselItem>
+            <MDBCarouselItem>
+              <MDBCarouselElement
+                className="image-two-size"
+                src={image_two}
+                alt="..."
+              />
+            </MDBCarouselItem>
+            <MDBCarouselItem>
+              <MDBCarouselElement
+                className="image-three-size"
+                src={image_three}
+                alt="..."
+              />
+            </MDBCarouselItem>
+          </MDBCarouselInner>
+        </MDBCarousel>
+        <MDBAccordion initialActive={1}>
+          <MDBAccordionItem
+            collapseId={1}
+            headerTitle="Accordion Item #1"
+          ></MDBAccordionItem>
+          <MDBCardBody>
+            <MDBCardTitle>{name}</MDBCardTitle>
 
-        <MDBCardBody>
-          <MDBCardTitle>{name}</MDBCardTitle>
+            <MDBCardText>
+              <b>${price}</b> | <b>{category}</b>
+            </MDBCardText>
 
-          <MDBCardText>
-            <b>${price}</b> | <b>{category}</b>
-          </MDBCardText>
+            <MDBCardText>{description}</MDBCardText>
 
-          <MDBCardText>{description}</MDBCardText>
-
-          <Button variant="primary">Contact Seller</Button>
-        </MDBCardBody>
+            <Button variant="primary">Contact Seller</Button>
+          </MDBCardBody>
+        </MDBAccordion>
       </MDBCard>
     </MDBCol>
   );
+}
+
+{
+  /* <Carousel>
+  <Carousel.Item>
+    <img className="d-block w-100" src={image_one} alt="First slide" />
+  </Carousel.Item>
+  <Carousel.Item>
+    <img className="d-block w-100" src={image_two} alt="Second slide" />
+  </Carousel.Item>
+  <Carousel.Item>
+    <img className="d-block w-100" src={image_three} alt="Third slide" />
+  </Carousel.Item>
+</Carousel>; */
 }
 
 export default SwapShop;

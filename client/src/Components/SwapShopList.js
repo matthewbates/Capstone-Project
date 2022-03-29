@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Container, Row } from "react-bootstrap";
 import SwapShop from "./SwapShop";
 import Search from "./Searches/SwapSearch";
-import { MDBRow } from "mdb-react-ui-kit";
+import { MDBRow, MDBContainer } from "mdb-react-ui-kit";
 
 function SwapShopList({
   swapShop,
@@ -49,8 +49,8 @@ function SwapShopList({
         />
       </Container>
       <br />
-      <Container>
-        <MDBRow className="row-cols-1 row-cols-lg-2 g-4">
+      <MDBContainer>
+        <MDBRow className="row-cols-1 row-cols-lg-4 row-cols-md-3 g-2">
           {filteredSearch.map((shop) => (
             <SwapShop
               key={shop.id}
@@ -65,7 +65,7 @@ function SwapShopList({
             />
           ))}
         </MDBRow>
-      </Container>
+      </MDBContainer>
       <Container style={{ width: "4rem", height: "4rem" }}></Container>
     </div>
   );

@@ -12,7 +12,7 @@ function Home({ search, setter, currentUser }) {
 
   return (
     <>
-      <MDBCarousel interval={3000} className="carousel-styling">
+      <MDBCarousel interval={6000} className="carousel-styling">
         <MDBCarouselInner>
           <MDBCarouselItem className="active">
             <MDBCarouselElement

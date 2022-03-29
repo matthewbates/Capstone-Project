@@ -7,48 +7,24 @@ import {
   ListGroup,
   Container,
 } from "react-bootstrap";
+import { MDBListGroup, MDBListGroupItem, MDBContainer } from "mdb-react-ui-kit";
 
-// pass a prop in for a gears' ID from GearGarage component
 function Packlist({ selectedGearTypes, deleteGear }) {
   return (
-    <div>
-      <Container>
-        <Col>
-          <Card border="primary" style={{ width: "18rem" }}>
-            <Card.Header className="bg-color dark">My PackList</Card.Header>
-            <ListGroup horizontal>
-              {selectedGearTypes.map((selectedGear) => (
-                <Button onClick={() => deleteGear(selectedGear.id)}>
-                  <ListGroup.Item>{selectedGear}</ListGroup.Item>
-                </Button>
-              ))}
-            </ListGroup>
-          </Card>
-        </Col>
-        {/* rails g resource for packlist */}
-        <Button>Save Packlist</Button>
-      </Container>
-      {/* put a save button; goes to back end */}
+    <div className="checklist-styling">
+      <p>
+        This is the checklist
+      </p>
+      <MDBContainer className="checklist-styling flex-fill">
+        <MDBListGroup style={{ maxWidth: "22rem" }}>
+          {selectedGearTypes.map((selectedGear) => (
+            <Button onClick={() => deleteGear(selectedGear.id)}>
+              <MDBListGroupItem>{selectedGear}</MDBListGroupItem>
+            </Button>
+          ))}
+        </MDBListGroup>
+      </MDBContainer>
     </div>
-    // <div>
-    //   <Container>
-    //     <Col>
-    //       <Card border="primary" style={{ width: "18rem" }}>
-    //         <Card.Header className="bg-color dark">My PackList</Card.Header>
-    //         <ListGroup horizontal>
-    //           {selectedGearTypes.map((selectedGear) => (
-    //             <Button onClick={() => deleteGear(selectedGear.id)}>
-    //               <ListGroup.Item>{selectedGear}</ListGroup.Item>
-    //             </Button>
-    //           ))}
-    //         </ListGroup>
-    //       </Card>
-    //     </Col>
-    //     {/* rails g resource for packlist */}
-    //     <Button>Save Packlist</Button>
-    //   </Container>
-    //   {/* put a save button; goes to back end */}
-    // </div>
   );
 }
 

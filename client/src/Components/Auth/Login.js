@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Button, Container, Input } from "react-bootstrap";
 import { Link, Navigate } from "react-router-dom";
 
@@ -6,8 +6,6 @@ function Login({ setCurrentUser, currentUser }) {
   // Login state
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
-  // Submit login credentials to db
 
   function handleLogin(e) {
     //assign login to for values stored in state | then post req
