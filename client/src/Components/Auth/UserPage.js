@@ -60,14 +60,13 @@ function UserPage({ currentUser, setCurrentUser }) {
   }
 
   return (
-    <div>
-      <Container className="body_of_form">
+      <Container className="edit-account-info">
         {/* Ternary used to verify currentUser */}
         {!currentUser ? (
           <Navigate to="/" />
         ) : (
           <div>
-            <Container>
+            <Container >
               <div className="profile-main-div rounded">
                 <div className="pt-3 shadow-lg">
                   <h1 className="text-center p-3 mb-3">Account Profile </h1>
@@ -205,7 +204,6 @@ function UserPage({ currentUser, setCurrentUser }) {
           </div>
         )}
       </Container>
-    </div>
   );
 }
 

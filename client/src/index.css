@@ -60,12 +60,25 @@ code {
 }
 
 .outer {
-  overflow-y: hidden;
   display: flex;
   justify-content: center;
   flex-direction: column;
   text-align: left;
   border-radius: 10px;
+}
+
+.edit-account-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+  border-radius: 10px;
+  max-width: 450px;
+  margin: auto;
+  margin-top: 10vh;
+  padding: 40px 55px 45px 55px;
+  border-radius: 15px;
+  transition: all 0.3s;
 }
 
 .google-styling {
@@ -82,7 +95,7 @@ code {
 }
 
 .gear-garage-styling {
-  overflow: auto;
+  overflow: hidden;
   display: flex;
   text-align: center;
   margin-top: auto;
@@ -191,4 +204,11 @@ code {
 
 .checklist-styling {
   display: flexbox;
+}
+
+.active {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  object-fit: cover;
 }

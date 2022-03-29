@@ -32,8 +32,8 @@ function SwapShop({
 }) {
   return (
     <MDBCol>
-      <MDBCard>
-        <MDBCarousel showControls>
+      <MDBCard className="d-flex align-items-stretch">
+        <MDBCarousel showControls interval="25000">
           <MDBCarouselInner data-interval="false">
             <MDBCarouselItem className="active">
               <MDBCarouselElement
@@ -58,22 +58,18 @@ function SwapShop({
             </MDBCarouselItem>
           </MDBCarouselInner>
         </MDBCarousel>
-        <MDBAccordion initialActive={1}>
-          <MDBAccordionItem
-            collapseId={1}
-            headerTitle="Accordion Item #1"
-          ></MDBAccordionItem>
-          <MDBCardBody>
-            <MDBCardTitle>{name}</MDBCardTitle>
+        <MDBAccordion initialActive={0}>
+          <MDBAccordionItem collapseId={1} headerTitle={name}>
+            <MDBCardBody>
+              <MDBCardTitle>{name}</MDBCardTitle>
 
-            <MDBCardText>
-              <b>${price}</b> | <b>{category}</b>
-            </MDBCardText>
+              <MDBCardText>
+                <b>${price}</b> | <b>{category}</b>
+              </MDBCardText>
 
-            <MDBCardText>{description}</MDBCardText>
-
-            <Button variant="primary">Contact Seller</Button>
-          </MDBCardBody>
+              <MDBCardText>{description}</MDBCardText>
+            </MDBCardBody>
+          </MDBAccordionItem>
         </MDBAccordion>
       </MDBCard>
     </MDBCol>
