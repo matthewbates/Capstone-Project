@@ -22,89 +22,93 @@ t5 = GearType.create!(name: 'Cook Systems')
 t6 = GearType.create!(name: 'Food & Water')
 # underwear, t-shirts, pants/shorts, fleeces, etc.
 t7 = GearType.create!(name: 'Clothing & Footwear')
-# first-aid kit, emergency shelter, etc.
-t8 = GearType.create!(name: 'Emergency & First-Aid')
 # hand sanitizer, toothbrush/toothpaste, toilet paper, sunscreen, etc.
-t9 = GearType.create!(name: 'Health & Hygiene')
+t8 = GearType.create!(name: 'Health & Hygiene')
 # knife/multi-tool, repair kit, duct tape, etc.
-t10 = GearType.create!(name: 'Tools & Repair Items')
+t9 = GearType.create!(name: 'Tools & Repair Items')
+# first-aid kit, emergency shelter, etc.
+t10 = GearType.create!(name: 'Emergency & First-Aid')
 # daypack, journal, playing cards, etc.
 t11 = GearType.create!(name: 'Other')
 
 puts 'Creating gear...'
 # backpacks
-g1 = Gear.create!(name: '25L Daypack', gear_type: t1)
-g2 = Gear.create!(name: '55L Backpack', gear_type: t1)
+Gear.create!(name: '25L Daypack', gear_type: t1)
+Gear.create!(name: '55L Backpack', gear_type: t1)
 # shelters
-g3 = Gear.create!(name: '1P Tent', gear_type: t2)
-g4 = Gear.create!(name: '2P Tent', gear_type: t2)
-g5 = Gear.create!(name: 'Tarp', gear_type: t2)
-g6 = Gear.create!(name: 'Footprint', gear_type: t2)
+Gear.create!(name: '1P Tent', gear_type: t2)
+Gear.create!(name: '2P Tent', gear_type: t2)
+Gear.create!(name: 'Tarp', gear_type: t2)
+Gear.create!(name: 'Footprint', gear_type: t2)
 # sleep systems
-g7 = Gear.create!(name: '0°F Sleeping Bag', gear_type: t3)
-g8 = Gear.create!(name: '15°F Sleeping Bag', gear_type: t3)
-g9 = Gear.create!(name: 'Sleeping Pad', gear_type: t3)
-g10 = Gear.create!(name: 'Camp Pillow', gear_type: t3)
+Gear.create!(name: '0°F Sleeping Bag', gear_type: t3)
+Gear.create!(name: '15°F Sleeping Bag', gear_type: t3)
+Gear.create!(name: 'Sleeping Pad', gear_type: t3)
+Gear.create!(name: 'Camp Pillow', gear_type: t3)
 # light systems
-g11 = Gear.create!(name: 'Headlamp', gear_type: t4)
-g12 = Gear.create!(name: 'Lantern', gear_type: t4)
+Gear.create!(name: 'Headlamp', gear_type: t4)
+Gear.create!(name: 'Lantern', gear_type: t4)
 # cook system
-g13 = Gear.create!(name: 'Stove', gear_type: t5)
-g14 = Gear.create!(name: 'Fuel Canister', gear_type: t5)
-g15 = Gear.create!(name: 'Mug', gear_type: t5)
-g16 = Gear.create!(name: 'Food Sack', gear_type: t5)
-g17 = Gear.create!(name: 'Bear Canister', gear_type: t5)
-g18 = Gear.create!(name: 'Spork', gear_type: t5)
+Gear.create!(name: 'Stove', gear_type: t5)
+Gear.create!(name: 'Fuel Canister', gear_type: t5)
+Gear.create!(name: 'Mug', gear_type: t5)
+Gear.create!(name: 'Food Sack', gear_type: t5)
+Gear.create!(name: 'Bear Canister', gear_type: t5)
+Gear.create!(name: 'Spork', gear_type: t5)
 # food and water
-g19 = Gear.create!(name: 'Water Bottle', gear_type: t6)
-g20 = Gear.create!(name: 'Water Filter', gear_type: t6)
-g21 = Gear.create!(name: 'Meals', gear_type: t6)
-g22 = Gear.create!(name: 'Energy Gels', gear_type: t6)
+Gear.create!(name: 'Water Bottle', gear_type: t6)
+Gear.create!(name: 'Water Filter', gear_type: t6)
+Gear.create!(name: 'Meals', gear_type: t6)
+Gear.create!(name: 'Energy Gels', gear_type: t6)
 # clothing and footwear
-g23 = Gear.create!(name: 'Moisture-Wicking Underwear', gear_type: t7)
-g24 = Gear.create!(name: 'Long Underwear', gear_type: t7)
-g25 = Gear.create!(name: 'Short-Sleeve T-shirt', gear_type: t7)
-g26 = Gear.create!(name: 'Long-Sleeve T-Shirt', gear_type: t7)
-g27 = Gear.create!(name: 'Quick-Drying Shorts', gear_type: t7)
-g28 = Gear.create!(name: 'Quick-Drying Pants', gear_type: t7)
-g29 = Gear.create!(name: 'Fleece Jacket', gear_type: t7)
-g30 = Gear.create!(name: 'Insulated Jacket', gear_type: t7)
-g31 = Gear.create!(name: 'Boots', gear_type: t7)
-g32 = Gear.create!(name: 'Wool Socks', gear_type: t7)
-g33 = Gear.create!(name: 'Rain Jacket', gear_type: t7)
-g34 = Gear.create!(name: 'Rain Pants', gear_type: t7)
-g35 = Gear.create!(name: 'Gloves', gear_type: t7)
-g36 = Gear.create!(name: 'Beanie', gear_type: t7)
-g37 = Gear.create!(name: 'Camp Sandals', gear_type: t7)
-g38 = Gear.create!(name: 'Bandana', gear_type: t7)
-g39 = Gear.create!(name: 'Gaiters', gear_type: t7)
+Gear.create!(name: 'Moisture-Wicking Underwear', gear_type: t7)
+Gear.create!(name: 'Short-Sleeve T-shirt', gear_type: t7)
+Gear.create!(name: 'Quick-Drying Pants', gear_type: t7)
+Gear.create!(name: 'Fleece Jacket', gear_type: t7)
+Gear.create!(name: 'Insulated Jacket', gear_type: t7)
+Gear.create!(name: 'Boots', gear_type: t7)
+Gear.create!(name: 'Wool Socks', gear_type: t7)
+Gear.create!(name: 'Rain Jacket', gear_type: t7)
+Gear.create!(name: 'Rain Pants', gear_type: t7)
+Gear.create!(name: 'Gloves', gear_type: t7)
+Gear.create!(name: 'Beanie', gear_type: t7)
+Gear.create!(name: 'Camp Sandals', gear_type: t7)
+Gear.create!(name: 'Bandana', gear_type: t7)
 # emergency & first-aid
-g40 = Gear.create!(name: 'First-Aid Kit', gear_type: t8)
-g41 = Gear.create!(name: 'Lighter', gear_type: t8)
-g42 = Gear.create!(name: 'Matches', gear_type: t8)
-g43 = Gear.create!(name: 'Emergency Shelter', gear_type: t8)
+Gear.create!(name: 'First-Aid Kit', gear_type: t8)
+Gear.create!(name: 'Lighter', gear_type: t8)
+Gear.create!(name: 'Matches', gear_type: t8)
+Gear.create!(name: 'Emergency Shelter', gear_type: t8)
+Gear.create!(name: 'Water Purifier', gear_type: t8)
+Gear.create!(name: 'Avalanche Beacon', gear_type: t8)
+Gear.create!(name: 'GPS Navigation System', gear_type: t8)
 # health & hygiene
-g44 = Gear.create!(name: 'Hand Sanitizer', gear_type: t9)
-g45 = Gear.create!(name: 'Toothbrush', gear_type: t9)
-g46 = Gear.create!(name: 'Toothpaste', gear_type: t9)
-g47 = Gear.create!(name: 'Toilet Paper', gear_type: t9)
-g48 = Gear.create!(name: 'Prescription Medicaiton', gear_type: t9)
-g49 = Gear.create!(name: 'Sunglasses', gear_type: t9)
-g50 = Gear.create!(name: 'Sunscreen', gear_type: t9)
-g51 = Gear.create!(name: 'Chapstick', gear_type: t9)
-g52 = Gear.create!(name: 'Bug Spray', gear_type: t9)
+Gear.create!(name: 'Hand Sanitizer', gear_type: t9)
+Gear.create!(name: 'Toothbrush', gear_type: t9)
+Gear.create!(name: 'Toothpaste', gear_type: t9)
+Gear.create!(name: 'Toilet Paper', gear_type: t9)
+Gear.create!(name: 'Prescription Medicaiton', gear_type: t9)
+Gear.create!(name: 'Sunglasses', gear_type: t9)
+Gear.create!(name: 'Sunscreen', gear_type: t9)
+Gear.create!(name: 'Chapstick', gear_type: t9)
+Gear.create!(name: 'Bug Spray', gear_type: t9)
 # tools & repair items
-g53 = Gear.create!(name: 'Knife', gear_type: t10)
+Gear.create!(name: 'Knife', gear_type: t10)
+Gear.create!(name: 'Duct Tape', gear_type: t10)
+Gear.create!(name: 'Tent Patches', gear_type: t10)
+Gear.create!(name: 'Multi-Tool', gear_type: t10)
+Gear.create!(name: 'Fishing Line', gear_type: t10)
+Gear.create!(name: 'Fire Starter', gear_type: t10)
 # extras
-g54 = Gear.create!(name: 'Trekking Poles', gear_type: t11)
-g55 = Gear.create!(name: 'Bear Spray', gear_type: t11)
-g56 = Gear.create!(name: 'Action Camera', gear_type: t11)
-g57 = Gear.create!(name: 'Journal', gear_type: t11)
-g58 = Gear.create!(name: 'Pen', gear_type: t11)
-g59 = Gear.create!(name: 'Book', gear_type: t11)
-g60 = Gear.create!(name: 'Deck of Cards', gear_type: t11)
-g61 = Gear.create!(name: 'Two-Way Radio', gear_type: t11)
-g62 = Gear.create!(name: 'Extra Batteries', gear_type: t11)
+Gear.create!(name: 'Trekking Poles', gear_type: t11)
+Gear.create!(name: 'Bear Spray', gear_type: t11)
+Gear.create!(name: 'Action Camera', gear_type: t11)
+Gear.create!(name: 'Journal', gear_type: t11)
+Gear.create!(name: 'Pen', gear_type: t11)
+Gear.create!(name: 'Book', gear_type: t11)
+Gear.create!(name: 'Deck of Cards', gear_type: t11)
+Gear.create!(name: 'Two-Way Radio', gear_type: t11)
+Gear.create!(name: 'Extra Batteries', gear_type: t11)
 
 h1 =
   Hike.create(
@@ -370,6 +374,50 @@ s12 =
     description:
       'Lightly used, family size or long hike - 7 days worth of food. Price is firm.',
     catagory: 'Cook Systems',
+    user: u1,
+  )
+s13 =
+  SwapShop.create!(
+    item: 'DTS Tracker Avalanche Beacon',
+    image_one:
+      'https://www.14ers.com/usercontent/gear/2022/3253/classified3253_16476220416234b799b66af.jpg',
+    image_two:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkvFpsYJKJiqJgTGfSeq32AETVrO95q5SOiGJzm92N_cpll19yfFye_eOq4ZHoBoJG8hk&usqp=CAU',
+    image_three: 'https://i.ebayimg.com/images/g/fsQAAOSw00Nh9fpB/s-l300.jpg',
+    price: 75,
+    description:
+      "There are better beacons out there these days but I don't use it and I'm willing to let it go cheap if someone needs an extra one. Paypal, cash, PM me if interested.",
+    catagory: 'Other',
+    user: u1,
+  )
+s14 =
+  SwapShop.create!(
+    item: 'SteriPen Ultra UV Water Purifier',
+    image_one:
+      'https://www.14ers.com/usercontent/gear/2022/3245/classified3245_164365935161f840573e768.jpg',
+    image_two:
+      'https://www.14ers.com/usercontent/gear/2022/3245/classified3245_164365934461f8405022198.jpg',
+    image_three:
+      'https://www.katadyngroup.com/LiveSiteAssets/60110054_60110055_ULT-MP-EF_EG_UltraStanding.jpg',
+    price: 35,
+    description:
+      'Portable water purifier that uses UV-light technologies making water safe to drink. I also take Venmo and will add shipping to the cost.',
+    catagory: 'Health & Hygiene',
+    user: u1,
+  )
+s15 =
+  SwapShop.create!(
+    item: 'Osprey Scorpion 45L Pack S/M',
+    image_one:
+      'https://www.14ers.com/usercontent/gear/2021/3233/classified3233_164055498761c8e1eb0ac2f.jpg',
+    image_two:
+      'https://www.14ers.com/usercontent/gear/2021/3233/classified3233_164055499561c8e1f31cd8c.jpg',
+    image_three:
+      'https://www.14ers.com/usercontent/gear/2021/3233/classified3233_164055500261c8e1fa1d388.jpg',
+    price: 160,
+    description:
+      "The reason I'm selling is because I have outgrown the torso length as I am still young. The only damage it has sustained is a chipped hip belt buckle.",
+    catagory: 'Backpacks',
     user: u1,
   )
 

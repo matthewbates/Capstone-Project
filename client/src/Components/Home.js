@@ -13,7 +13,7 @@ function Home({ search, setter, currentUser }) {
   return (
     <>
       <MDBCarousel interval={6000} className="carousel-styling">
-        <MDBCarouselInner>
+        <MDBCarouselInner fade>
           <MDBCarouselItem className="active">
             <MDBCarouselElement
               src="https://www.14ers.com/photos/wilsongroup/peakphotos/large/201603_MtWil01.jpg"

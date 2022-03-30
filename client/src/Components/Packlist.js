@@ -13,7 +13,7 @@ function Packlist({ selectedGearTypes, deleteGear }) {
   return (
     <div className="checklist-styling">
       <p>
-        This is the checklist
+       Items that were added from Gear Garage will show up below. Make sure to pack accordingly, and to always check the weather!
       </p>
       <MDBContainer className="checklist-styling flex-fill">
         <MDBListGroup style={{ maxWidth: "22rem" }}>

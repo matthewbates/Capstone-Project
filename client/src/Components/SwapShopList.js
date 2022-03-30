@@ -14,7 +14,9 @@ function SwapShopList({
   priceSearch,
   priceSetter,
   category,
-}) {
+})
+
+{
   const filteredSearch = swapShop
     .filter((shop) => shop.item.toLowerCase().includes(search.toLowerCase()))
     .filter((shop) =>

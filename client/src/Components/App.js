@@ -11,6 +11,7 @@ import SwapShopList from "./SwapShopList";
 import UserPage from "./Auth/UserPage";
 import Home from "./Home";
 import Disclaimer from "./Disclaimer";
+import GoogleLoginOption from "./Auth/GoogleLogin";
 
 function App() {
   const [currentUser, setCurrentUser] = useState("");

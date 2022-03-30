@@ -38,33 +38,27 @@ function Footer({ currentUser }) {
             <h6 className="footer-text text-light">
               <b>Developer Links</b>
             </h6>{" "}
-            <a
-              className="btn btn-primary btn-floating m-1"
+            <MDBBtn
+              className="m-1"
               style={{ backgroundColor: "#0082ca" }}
               href="https://www.linkedin.com/in/matthew-bates-71b7bb79/"
-              role="button"
-              size="lg"
             >
-              <MDBIcon fab icon="linkedin-in" size="lg" />
-            </a>{" "}
-            <a
-              className="btn btn-primary btn-floating m-1"
+              <MDBIcon fab icon="linkedin-in" />
+            </MDBBtn>
+            <MDBBtn
+              className="m-1"
               style={{ backgroundColor: "#333333" }}
-              href="#https://github.com/matthewbates"
-              role="button"
-              size="lg"
+              href="https://github.com/matthewbates"
             >
-              <MDBIcon fab icon="github" size="lg" />
-            </a>{" "}
-            <a
-              className="btn btn-primary btn-floating m-1"
+              <MDBIcon fab icon="github" />
+            </MDBBtn>
+            <MDBBtn
+              className="m-1"
               style={{ backgroundColor: "#bababa" }}
               href="https://medium.com/me/stories/public"
-              role="button"
-              size="lg"
             >
-              <MDBIcon fab icon="medium" size="lg" />
-            </a>
+              <MDBIcon fab icon="medium" />
+            </MDBBtn>
           </section>
         </div>
         <b>

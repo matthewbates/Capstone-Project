@@ -12,6 +12,7 @@ import {
   ListGroupItem,
   UnorderedListGroup,
 } from "react-bootstrap";
+import { MDBBtn } from "mdb-react-ui-kit";
 import Checklist from "./Packlist";
 
 function GearGarage({ currentUser, gearTypes, handleSelect }) {
@@ -29,7 +30,8 @@ function GearGarage({ currentUser, gearTypes, handleSelect }) {
           <img src="https://www.rei.com/dam/winter_camping_checklist_hero_lg.jpg" />
         </div>
         <div classname="text">
-          <p>Welcome to the Gear Garage.</p>
+          {" "}
+          <br />
           <p>
             Whether you're setting out for a dayhike or a several day excursion,
             use this page to add the items you'll want to bring along with you
@@ -49,7 +51,7 @@ function GearGarage({ currentUser, gearTypes, handleSelect }) {
             const list = type.gears.map((gear) => {
               return (
                 <Container
-                  className="gap-1 mb-1 mt-0"
+                  className="gap-1 mb-0 mt-0"
                   key={gear.id}
                   id={gear.id}
                 >
@@ -58,16 +60,20 @@ function GearGarage({ currentUser, gearTypes, handleSelect }) {
               );
             });
             return (
-              <div className="full-gear-garage col-md-6" key={type.id}>
+              <div className="full-gear-garage col-lg-3" key={type.id}>
                 <h5>
                   <br />
                   <u>{type.name}</u>
                 </h5>
                 {list.map((gearItem) => (
                   <div key={gearItem.id}>
-                    <Button
+                    <MDBBtn
+                      rounded
+                      outline
+                      className="mx-6 bg-dark text-light"
+                      color="dark"
                       horizontal
-                      className="gear-garage-buttons"
+                      // className="gear-garage-buttons"
                       onClick={() =>
                         handleSelect((selectedGearTypes) => {
                           return [gearItem, ...selectedGearTypes];
@@ -75,7 +81,7 @@ function GearGarage({ currentUser, gearTypes, handleSelect }) {
                       }
                     >
                       {gearItem}
-                    </Button>
+                    </MDBBtn>
                   </div>
                 ))}
               </div>

@@ -50,13 +50,16 @@ function Search({
           onSelect={handleCatagorySelect}
         >
           <Dropdown.Item eventKey="">All Categories</Dropdown.Item>
+          <Dropdown.Item eventKey="Backpacks">Backpacks</Dropdown.Item>
           <Dropdown.Item eventKey="Clothing & Footwear">
             Clothing & Footwear
           </Dropdown.Item>
-          <Dropdown.Item eventKey="Shelters">Shelters</Dropdown.Item>
-          <Dropdown.Item eventKey="Backpacks">Backpacks</Dropdown.Item>
-          <Dropdown.Item eventKey="Other">Other</Dropdown.Item>
           <Dropdown.Item eventKey="Cook Systems">Cook Systems</Dropdown.Item>
+          <Dropdown.Item eventKey="Health & Hygiene">
+            Health & Hygiene
+          </Dropdown.Item>
+          <Dropdown.Item eventKey="Other">Other</Dropdown.Item>
+          <Dropdown.Item eventKey="Shelters">Shelters</Dropdown.Item>
           <Dropdown.Item eventKey="Sleep Systems">Sleep Systems</Dropdown.Item>
         </DropdownButton>
         <DropdownButton

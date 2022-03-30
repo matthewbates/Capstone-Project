@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Form, Button, Container, Input } from "react-bootstrap";
+import { MDBBtn } from "mdb-react-ui-kit";
 import { Link, Navigate } from "react-router-dom";
+import GoogleLogin from "./GoogleLogin";
+import GoogleLoginOption from "./GoogleLogin";
 
 function Login({ setCurrentUser, currentUser }) {
   // Login state
@@ -32,6 +35,14 @@ function Login({ setCurrentUser, currentUser }) {
       });
   }
 
+  function handleFailure(result) {
+    alert(result);
+  }
+
+  function handleGoogleLogin(googleData) {
+    console.log(googleData);
+  }
+
   return (
     <div className="body-of-form">
       {/* Ternary used to verify currentUser | true navigates to home / false null */}
@@ -59,15 +70,20 @@ function Login({ setCurrentUser, currentUser }) {
               />
             </Form.Group>
             <div className="form-check"></div>
-            <Button onClick={handleLogin} variant="primary" to="/login">
+            <Button
+              size="auto"
+              onClick={handleLogin}
+              variant="primary"
+              to="/login"
+            >
               Log In
             </Button>
             <br />
             <div>
-              <Link to="/signup">Not registered? It's free!</Link>
+              Not a member? <Link to="/signup">Register</Link>
             </div>
             <div>
-              Forgot <Link to="/password_reset">Password?</Link>
+              <GoogleLoginOption />
             </div>
           </Form>
         </div>
