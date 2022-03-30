@@ -76,7 +76,7 @@ function Login({ setCurrentUser, currentUser }) {
               variant="primary"
               to="/login"
             >
-              Log In
+              Submit
             </Button>
             <br />
             <div>

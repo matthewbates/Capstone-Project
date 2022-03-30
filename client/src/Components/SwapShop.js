@@ -58,7 +58,7 @@ function SwapShop({
             </MDBCarouselItem>
           </MDBCarouselInner>
         </MDBCarousel>
-        <MDBAccordion initialActive={0}>
+        <MDBAccordion className="d-flex" initialActive={0}>
           <MDBAccordionItem collapseId={1} headerTitle={name}>
             <MDBCardBody>
               <MDBCardTitle>{name}</MDBCardTitle>

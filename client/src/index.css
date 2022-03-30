@@ -108,6 +108,7 @@ code {
 }
 
 .body-of-swap-shop {
+  background-color: #4682B4;
   height: 90vh;
   overflow: auto;
 }
@@ -211,4 +212,8 @@ code {
   background-repeat: no-repeat;
   background-size: contain;
   object-fit: cover;
+}
+
+.d-flex {
+  display: flex;
 }

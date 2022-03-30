@@ -32,7 +32,7 @@ function TrailInfo({
           <hr />
 
           <ListGroup
-            horizontal
+            vertical
             className="d-flex align-items center justify-content-center"
           >
             <ListGroup.Item className="text-center">
