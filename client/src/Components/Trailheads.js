@@ -161,7 +161,11 @@ function Trailheads({
               onCloseClick={() => setSelected({})}
             >
               <div>
-                <b>{selected.name}</b> <br />
+                <b>
+                  <u>{selected.name}</u>
+                  <br />
+                </b>{" "}
+                <br />
                 <Button
                   size="sm"
                   className="mx-auto"
@@ -171,13 +175,13 @@ function Trailheads({
                   Details
                 </Button>
                 <Button
-                  className="text-light weather button"
+                  size="sm"
                   onClick={() => {
                     setShowWeather(!showWeather);
                     getWeather();
                   }}
                 >
-                  Click to Show Weather
+                  Weather
                 </Button>
                 {showWeather ? <Weather weather={weather} /> : null}
               </div>
