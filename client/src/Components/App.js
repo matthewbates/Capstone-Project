@@ -12,6 +12,7 @@ import UserPage from "./Auth/UserPage";
 import Home from "./Home";
 import Footer from "./Footer";
 import GoogleLoginOption from "./Auth/GoogleLogin";
+import { MDBBtn } from "mdb-react-ui-kit";
 
 function App() {
   const [currentUser, setCurrentUser] = useState("");
@@ -36,10 +37,6 @@ function App() {
     const updatedPackList = selectedGearTypes.filter((gear) => gear.id !== id);
     setSelectedGearTypes(updatedPackList);
   };
-
-  function handleDarkModeClick() {
-    setIsDarkMode((isDarkMode) => !isDarkMode);
-  }
 
   useEffect(() => {
     fetch(`/gear_types`)
@@ -71,10 +68,16 @@ function App() {
     }).then(setCurrentUser());
   }
 
+  function handleDarkModeClick() {
+    let element = document.body;
+    element.classList.toggle("dark");
+    setIsDarkMode((isDarkMode) => !isDarkMode);
+  }
+
   return (
     <BrowserRouter>
       <Navbar
-        classname={"App" + (isDarkMode ? "dark" : "light")}
+        classname={"App" + (setIsDarkMode ? "dark" : "light")}
         collapseOnSelect
         expand="md"
         variant="dark"
@@ -120,13 +123,20 @@ function App() {
                     <Nav.Link as={Link} to="/userpage">
                       Profile
                     </Nav.Link>
+                    <MDBBtn
+                    floating size="md"
+                      className="dark-mode-btn m-1"
+                      onClick={handleDarkModeClick}
+                    >
+                      {isDarkMode ? "🌙" : "☀️"}
+                    </MDBBtn>
                     <Nav.Link as={Link} to="/disclaimer"></Nav.Link>
                   </>
                 ) : null}
                 {/* should this be a div? */}
                 <>
                   {!currentUser ? null : (
-                    <Button onClick={handleLogout} as={Link} to="/">
+                    <Button rounded onClick={handleLogout} as={Link} to="/">
                       Log out
                     </Button>
                   )}
@@ -236,13 +246,7 @@ function App() {
         />
         <Route
           path="/footer"
-          element={
-            <Footer
-              currentUser={currentUser}
-              isDarkMode={isDarkMode}
-              onDarkModeClick={handleDarkModeClick}
-            ></Footer>
-          }
+          element={<Footer currentUser={currentUser}></Footer>}
         ></Route>
       </Routes>
     </BrowserRouter>

@@ -33,8 +33,6 @@ function Trailheads({
   const [weather, setWeather] = useState(null);
   const [showWeather, setShowWeather] = useState(false);
 
-  console.log(weather);
-
   function success(position) {
     const currentPosition = {
       lat: position.coords.latitude,
@@ -46,7 +44,6 @@ function Trailheads({
   function getWeather() {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${selected.location.lat}&lon=${selected.location.lng}&appid=1bf6a58ea4dd5073cf1ea98128e22991`
-      // `https://api.openweathermap.org/data/2.5/forecast?lat=${selected.location.lat}&lon=${selected.location.lng}&appid=1bf6a58ea4dd5073cf1ea98128e22991`
     )
       .then((response) => response.json())
       .then((weather) => {
@@ -64,6 +61,15 @@ function Trailheads({
     navigator.geolocation.getCurrentPosition(success);
   });
 
+  const icons = [
+    { blueDot: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png" },
+    { pinkDot: "http://maps.google.com/mapfiles/ms/icons/pink-dot.png" },
+
+    { purpleDot: "http://maps.google.com/mapfiles/ms/icons/purple-dot.png" },
+    { yellowDot: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png" },
+    { greenDot: "http://maps.google.com/mapfiles/ms/icons/green-dot.png" },
+  ];
+
   const locations = [
     {
       id: 1,
@@ -72,6 +78,7 @@ function Trailheads({
         lat: 38.851379,
         lng: -104.921,
       },
+      dot: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
     },
     {
       id: 2,
@@ -80,6 +87,7 @@ function Trailheads({
         lat: 38.849157,
         lng: -104.913,
       },
+      dot: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
     },
     {
       id: 3,
@@ -88,6 +96,7 @@ function Trailheads({
         lat: 38.856813,
         lng: -104.932,
       },
+      dot: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
     },
     {
       id: 4,
@@ -96,6 +105,7 @@ function Trailheads({
         lat: 38.855787,
         lng: -104.934,
       },
+      dot: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
     },
     {
       id: 5,
@@ -104,6 +114,7 @@ function Trailheads({
         lat: 38.791414,
         lng: -104.866,
       },
+      dot: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
     },
     {
       id: 6,
@@ -112,6 +123,7 @@ function Trailheads({
         lat: 38.785557,
         lng: -104.889,
       },
+      dot: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
     },
     {
       id: 7,
@@ -120,14 +132,70 @@ function Trailheads({
         lat: 38.787769,
         lng: -104.877,
       },
+      dot: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
     },
     {
       id: 8,
-      name: "Texas Sucks",
+      name: "Mount Harvard",
       location: {
-        lat: 29.7604,
-        lng: -95.3698,
+        lat: 38.924368,
+        lng: -106.321,
       },
+      dot: "http://maps.google.com/mapfiles/ms/icons/pink-dot.png",
+    },
+    {
+      id: 8,
+      name: "Mount Columbia",
+      location: {
+        lat: 38.903881,
+        lng: -106.297,
+      },
+      dot: "http://maps.google.com/mapfiles/ms/icons/pink-dot.png",
+    },
+    {
+      id: 8,
+      name: "Mount Yale",
+      location: {
+        lat: 38.844154,
+        lng: -106.314,
+      },
+      dot: "http://maps.google.com/mapfiles/ms/icons/pink-dot.png",
+    },
+    {
+      id: 8,
+      name: "Mount Oxford",
+      location: {
+        lat: 38.964776,
+        lng: -106.339,
+      },
+      dot: "http://maps.google.com/mapfiles/ms/icons/pink-dot.png",
+    },
+    {
+      id: 8,
+      name: "Mount Princeton",
+      location: {
+        lat: 38.74919,
+        lng: -106.242,
+      },
+      dot: "http://maps.google.com/mapfiles/ms/icons/pink-dot.png",
+    },
+    {
+      id: 8,
+      name: "Mount Massive",
+      location: {
+        lat: 38.74919,
+        lng: -106.242,
+      },
+      dot: "http://maps.google.com/mapfiles/ms/icons/pink-dot.png",
+    },
+    {
+      id: 8,
+      name: "Mount Elbert",
+      location: {
+        lat: 39.117642,
+        lng: -106.445,
+      },
+      dot: "http://maps.google.com/mapfiles/ms/icons/pink-dot.png",
     },
   ];
 
@@ -135,12 +203,14 @@ function Trailheads({
     setSelected(item);
   };
 
+  const image = "⛰";
+
   return (
     <div className="google-styling">
       <LoadScript googleMapsApiKey="AIzaSyD4G8pUuPzvq_CQ9wdT5eOJpGG4ywQtFsY">
         <GoogleMap
           mapContainerStyle={mapStyles}
-          zoom={4.5}
+          zoom={9}
           center={currentPosition}
         >
           {locations.map((item) => {
@@ -150,7 +220,7 @@ function Trailheads({
                 position={item.location}
                 currentPostition={currentPosition}
                 onClick={() => onSelect(item)}
-                // onMouseOver={() => onSelect(item)}
+                icon={item.dot}
               />
             );
           })}

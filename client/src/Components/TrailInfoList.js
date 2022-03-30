@@ -16,8 +16,13 @@ function TrailInfoList({ trailInfo, setTrailInfo }) {
   }, []);
   if (hike.length === 0) {
     return (
-      <MDBBtn className="center-loading-spinner" disabled>
-        <MDBSpinner size="sm" role="status" tag="span" className="me-2" />
+      <MDBBtn>
+        <MDBSpinner
+          size="sm"
+          role="status"
+          tag="span"
+          className="center-loading-spinner"
+        />
         Loading...
       </MDBBtn>
     );

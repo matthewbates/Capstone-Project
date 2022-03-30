@@ -1,7 +1,6 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect } from "react";
 import { Nav } from "react-bootstrap";
 import { NavLink, Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
 import {
   MDBFooter,
   MDBContainer,
@@ -10,10 +9,11 @@ import {
   MDBIcon,
   MDBBtn,
 } from "mdb-react-ui-kit";
-import Disclaimer from "./Disclaimer";
 
 function Footer({ currentUser, isDarkMode, onDarkModeClick }) {
   const [time, setTime] = useState(new Date());
+
+
 
   useEffect(() => {
     const timerID = setInterval(() => {
@@ -59,6 +59,7 @@ function Footer({ currentUser, isDarkMode, onDarkModeClick }) {
             >
               <MDBIcon fab icon="medium" />
             </MDBBtn>
+
           </section>
         </div>
         <b>

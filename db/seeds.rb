@@ -33,7 +33,8 @@ t11 = GearType.create!(name: 'Other')
 
 puts 'Creating gear...'
 # backpacks
-Gear.create!(name: '25L Daypack', gear_type: t1)
+Gear.create!(name: '18L Daypack', gear_type: t1)
+Gear.create!(name: '25L Backpack', gear_type: t1)
 Gear.create!(name: '55L Backpack', gear_type: t1)
 # shelters
 Gear.create!(name: '1P Tent', gear_type: t2)
@@ -48,6 +49,7 @@ Gear.create!(name: 'Camp Pillow', gear_type: t3)
 # light systems
 Gear.create!(name: 'Headlamp', gear_type: t4)
 Gear.create!(name: 'Lantern', gear_type: t4)
+Gear.create!(name: 'Extra Batteries', gear_type: t11)
 # cook system
 Gear.create!(name: 'Stove', gear_type: t5)
 Gear.create!(name: 'Fuel Canister', gear_type: t5)
@@ -58,22 +60,24 @@ Gear.create!(name: 'Spork', gear_type: t5)
 # food and water
 Gear.create!(name: 'Water Bottle', gear_type: t6)
 Gear.create!(name: 'Water Filter', gear_type: t6)
-Gear.create!(name: 'Meals', gear_type: t6)
-Gear.create!(name: 'Energy Gels', gear_type: t6)
+Gear.create!(name: 'Dehydrated Meal', gear_type: t6)
+Gear.create!(name: 'Energy Gel', gear_type: t6)
+Gear.create!(name: 'Energy Bar', gear_type: t6)
+Gear.create!(name: 'Trail Mix', gear_type: t6)
+Gear.create!(name: 'Fruit', gear_type: t6)
+Gear.create!(name: 'Granola', gear_type: t6)
 # clothing and footwear
 Gear.create!(name: 'Moisture-Wicking Underwear', gear_type: t7)
-Gear.create!(name: 'Short-Sleeve T-shirt', gear_type: t7)
-Gear.create!(name: 'Quick-Drying Pants', gear_type: t7)
+Gear.create!(name: 'Short/Long-Sleeve T-shirt', gear_type: t7)
+Gear.create!(name: 'Quick-Drying Shorts/Pants', gear_type: t7)
 Gear.create!(name: 'Fleece Jacket', gear_type: t7)
 Gear.create!(name: 'Insulated Jacket', gear_type: t7)
 Gear.create!(name: 'Boots', gear_type: t7)
 Gear.create!(name: 'Wool Socks', gear_type: t7)
-Gear.create!(name: 'Rain Jacket', gear_type: t7)
-Gear.create!(name: 'Rain Pants', gear_type: t7)
+Gear.create!(name: 'Rain Jacket/Pants', gear_type: t7)
 Gear.create!(name: 'Gloves', gear_type: t7)
 Gear.create!(name: 'Beanie', gear_type: t7)
 Gear.create!(name: 'Camp Sandals', gear_type: t7)
-Gear.create!(name: 'Bandana', gear_type: t7)
 # emergency & first-aid
 Gear.create!(name: 'First-Aid Kit', gear_type: t8)
 Gear.create!(name: 'Lighter', gear_type: t8)
@@ -108,7 +112,6 @@ Gear.create!(name: 'Pen', gear_type: t11)
 Gear.create!(name: 'Book', gear_type: t11)
 Gear.create!(name: 'Deck of Cards', gear_type: t11)
 Gear.create!(name: 'Two-Way Radio', gear_type: t11)
-Gear.create!(name: 'Extra Batteries', gear_type: t11)
 
 h1 =
   Hike.create(
@@ -214,6 +217,111 @@ h7 =
     allows_bikes: 'No',
     lat: '38.787769',
     lng: '-104.877',
+  )
+h8 =
+  Hike.create!(
+    trail_name: 'Mount Harvard',
+    image:
+      'https://cdn-assets.alltrails.com/static-map/production/at-map/20979805/trail-us-colorado-mount-harvard-via-frenchman-creek-trail-1457-at-map-20979805-1642646192-414x200-2.png',
+    out_and_back: 'Yes',
+    loop: 'No',
+    difficulty: 'Hard',
+    total_length: 13.0,
+    elevation_profile: 'Ascent: 4,514 ft. | Descent: 16 ft.',
+    allows_dogs: 'Yes',
+    allows_bikes: 'No',
+    lat: '38.924368',
+    lng: '-106.321',
+  )
+h9 =
+  Hike.create!(
+    trail_name: 'Mount Columbia',
+    image:
+      'https://cdn-assets.alltrails.com/static-map/production/at-map/48517946/trail-us-colorado-mount-columbia-via-horn-fork-basin-trail-at-map-48517946-1642752624-414x200-2.png',
+    out_and_back: 'Yes',
+    loop: 'No',
+    difficulty: 'Hard',
+    total_length: 10.0,
+    elevation_profile: 'Ascent: 4,186 ft. | Descent: 22 ft.',
+    allows_dogs: 'Yes',
+    allows_bikes: 'No',
+    lat: '38.903881',
+    lng: '-106.297',
+  )
+h10 =
+  Hike.create!(
+    trail_name: 'Mount Yale',
+    image:
+      'https://cdn-assets.alltrails.com/static-map/production/at-map/18115874/trail-us-colorado-mount-yale-summit-trail-at-map-18115874-1647560646-414x200-2.png',
+    out_and_back: 'Yes',
+    loop: 'No',
+    difficulty: 'Hard',
+    total_length: 9.2,
+    elevation_profile: 'Ascent: 4,328 ft. | Descent: 59 ft.',
+    allows_dogs: 'No',
+    allows_bikes: 'No',
+    lat: '38.844154',
+    lng: '-106.314',
+  )
+h11 =
+  Hike.create!(
+    trail_name: 'Mount Oxford',
+    image:
+      'https://cdn-assets.alltrails.com/static-map/production/at-map/24774112/trail-us-colorado-mount-oxford-via-pine-creek-trail-at-map-24774112-1642675439-414x200-2.png',
+    out_and_back: 'Yes',
+    loop: 'No',
+    difficulty: 'Hard',
+    total_length: 11.8,
+    elevation_profile: 'Ascent: 5,084 ft. | Descent: 1,851 ft.',
+    allows_dogs: 'No',
+    allows_bikes: 'No',
+    lat: '38.964776',
+    lng: '-106.339',
+  )
+h12 =
+  Hike.create!(
+    trail_name: 'Mount Princeton',
+    image:
+      'https://cdn-assets.alltrails.com/static-map/production/at-map/13269572/trail-us-colorado-mount-princeton-trail-at-map-13269572-1645031623-414x200-2.png',
+    out_and_back: 'Yes',
+    loop: 'No',
+    difficulty: 'Hard',
+    total_length: 4.0,
+    elevation_profile: 'Ascent: 2,366 ft. | Descent: 0 ft.',
+    allows_dogs: 'No',
+    allows_bikes: 'No',
+    lat: '38.74919',
+    lng: '-106.242',
+  )
+h13 =
+  Hike.create!(
+    trail_name: 'Mount Massive',
+    image:
+      'https://cdn-assets.alltrails.com/static-map/production/at-map/13353839/trail-us-colorado-mount-massive-trail-via-south-east-at-map-13353839-1642614400-414x200-2.png',
+    out_and_back: 'Yes',
+    loop: 'No',
+    difficulty: 'Hard',
+    total_length: 12.2,
+    elevation_profile: 'Ascent: 4,452 ft. | Descent: 112 ft.',
+    allows_dogs: 'Yes',
+    allows_bikes: 'No',
+    lat: '38.74919',
+    lng: '-106.242',
+  )
+h14 =
+  Hike.create!(
+    trail_name: 'Mount Elbert',
+    image:
+      'https://cdn-assets.alltrails.com/static-map/production/at-map/80543889/trail-us-colorado-mount-elbert-east-ridge-trail-at-map-80543889-1644889957-414x200-2.png',
+    out_and_back: 'Yes',
+    loop: 'No',
+    difficulty: 'Hard',
+    total_length: 6.8,
+    elevation_profile: 'Ascent: 3,858 ft. | Descent: 15 ft.',
+    allows_dogs: 'Yes',
+    allows_bikes: 'No',
+    lat: '39.117642',
+    lng: '-106.445',
   )
 
 puts 'Creating Swapshop items...'
