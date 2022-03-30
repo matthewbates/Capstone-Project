@@ -10,7 +10,7 @@ import TrailInfoList from "./TrailInfoList";
 import SwapShopList from "./SwapShopList";
 import UserPage from "./Auth/UserPage";
 import Home from "./Home";
-import Disclaimer from "./Disclaimer";
+import Footer from "./Footer";
 import GoogleLoginOption from "./Auth/GoogleLogin";
 
 function App() {
@@ -24,6 +24,7 @@ function App() {
   const [catSearch, setCatSearch] = useState("");
   const [priceSearch, setPriceSearch] = useState("");
   const [hikeSearch, setHikeSearch] = useState("");
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     fetch("/swap_shops")
@@ -35,6 +36,10 @@ function App() {
     const updatedPackList = selectedGearTypes.filter((gear) => gear.id !== id);
     setSelectedGearTypes(updatedPackList);
   };
+
+  function handleDarkModeClick() {
+    setIsDarkMode((isDarkMode) => !isDarkMode);
+  }
 
   useEffect(() => {
     fetch(`/gear_types`)
@@ -69,10 +74,12 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar
+        classname={"App" + (isDarkMode ? "dark" : "light")}
         collapseOnSelect
-        expand="sm"
-        style={{ backgroundColor: "black" }}
+        expand="md"
         variant="dark"
+        // className="navbar-restyling"
+        style={{ backgroundColor: "black" }}
       >
         <Container fluid className="navbar-styling">
           {currentUser ? (
@@ -93,35 +100,38 @@ function App() {
           </Navbar.Brand>
 
           <div>
-            <Navbar>
-              {currentUser ? (
+            <Navbar collapseOnSelect expand="lg">
+              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+              <Navbar.Collapse id="responsive-navbar-nav">
+                {currentUser ? (
+                  <>
+                    <Nav.Link as={Link} to="/map">
+                      Hikes
+                    </Nav.Link>
+                    <Nav.Link as={Link} to="/packlist">
+                      Checklist
+                    </Nav.Link>
+                    <Nav.Link as={Link} to="/gear_garage">
+                      Gear Garage
+                    </Nav.Link>
+                    <Nav.Link as={Link} to="/swap_shop_list">
+                      Swap/Shop
+                    </Nav.Link>
+                    <Nav.Link as={Link} to="/userpage">
+                      Profile
+                    </Nav.Link>
+                    <Nav.Link as={Link} to="/disclaimer"></Nav.Link>
+                  </>
+                ) : null}
+                {/* should this be a div? */}
                 <>
-                  <Nav.Link as={Link} to="/map">
-                    Hikes
-                  </Nav.Link>
-                  <Nav.Link as={Link} to="/packlist">
-                    Checklist
-                  </Nav.Link>
-                  <Nav.Link as={Link} to="/gear_garage">
-                    Gear Garage
-                  </Nav.Link>
-                  <Nav.Link as={Link} to="/swap_shop_list">
-                    Swap/Shop
-                  </Nav.Link>
-                  <Nav.Link as={Link} to="/userpage">
-                    Profile
-                  </Nav.Link>
-                  <Nav.Link as={Link} to="/disclaimer"></Nav.Link>
+                  {!currentUser ? null : (
+                    <Button onClick={handleLogout} as={Link} to="/">
+                      Log out
+                    </Button>
+                  )}
                 </>
-              ) : null}
-              {/* should this be a div? */}
-              <>
-                {!currentUser ? null : (
-                  <Button onClick={handleLogout} as={Link} to="/">
-                    Log out
-                  </Button>
-                )}
-              </>
+              </Navbar.Collapse>
             </Navbar>
           </div>
         </Container>
@@ -224,7 +234,16 @@ function App() {
             />
           }
         />
-        <Route path="/disclaimer" element={<Disclaimer />}></Route>
+        <Route
+          path="/footer"
+          element={
+            <Footer
+              currentUser={currentUser}
+              isDarkMode={isDarkMode}
+              onDarkModeClick={handleDarkModeClick}
+            ></Footer>
+          }
+        ></Route>
       </Routes>
     </BrowserRouter>
   );

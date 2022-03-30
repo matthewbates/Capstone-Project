@@ -12,7 +12,7 @@ import {
 } from "mdb-react-ui-kit";
 import Disclaimer from "./Disclaimer";
 
-function Footer({ currentUser }) {
+function Footer({ currentUser, isDarkMode, onDarkModeClick }) {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {

@@ -3,6 +3,7 @@ import TrailInfoList from "./TrailInfoList";
 import TrailInfo from "./TrailInfo";
 import { Link } from "react-router-dom";
 import { Button, CloseButton, Spinner } from "react-bootstrap";
+import Weather from "./Weather";
 
 import {
   GoogleMap,
@@ -29,14 +30,39 @@ function Trailheads({
   const [selected, setSelected] = useState({});
   const [currentPosition, setCurrentPosition] = useState({});
   const [done, setDone] = useState(undefined);
+  const [weather, setWeather] = useState(null);
+  const [showWeather, setShowWeather] = useState(false);
 
-  const success = (position) => {
+  console.log(weather);
+
+  function success(position) {
     const currentPosition = {
       lat: position.coords.latitude,
       lng: position.coords.longitude,
     };
     setCurrentPosition(currentPosition);
-  };
+  }
+
+  function getWeather() {
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${selected.location.lat}&lon=${selected.location.lng}&appid=1bf6a58ea4dd5073cf1ea98128e22991`
+      // `https://api.openweathermap.org/data/2.5/forecast?lat=${selected.location.lat}&lon=${selected.location.lng}&appid=1bf6a58ea4dd5073cf1ea98128e22991`
+    )
+      .then((response) => response.json())
+      .then((weather) => {
+        setWeather(weather);
+      });
+  }
+
+  useEffect(() => {
+    if (selected.location) {
+      getWeather();
+    }
+  }, [selected]);
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(success);
+  });
 
   const locations = [
     {
@@ -95,11 +121,15 @@ function Trailheads({
         lng: -104.877,
       },
     },
+    {
+      id: 8,
+      name: "Texas Sucks",
+      location: {
+        lat: 29.7604,
+        lng: -95.3698,
+      },
+    },
   ];
-
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(success);
-  });
 
   const onSelect = (item) => {
     setSelected(item);
@@ -110,7 +140,7 @@ function Trailheads({
       <LoadScript googleMapsApiKey="AIzaSyD4G8pUuPzvq_CQ9wdT5eOJpGG4ywQtFsY">
         <GoogleMap
           mapContainerStyle={mapStyles}
-          zoom={11.5}
+          zoom={4.5}
           center={currentPosition}
         >
           {locations.map((item) => {
@@ -119,10 +149,8 @@ function Trailheads({
                 key={item.name}
                 position={item.location}
                 currentPostition={currentPosition}
-                // icon={{
-                //   url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-                // }}
-                onMouseOver={() => onSelect(item)}
+                onClick={() => onSelect(item)}
+                // onMouseOver={() => onSelect(item)}
               />
             );
           })}
@@ -142,6 +170,16 @@ function Trailheads({
                 >
                   Details
                 </Button>
+                <Button
+                  className="text-light weather button"
+                  onClick={() => {
+                    setShowWeather(!showWeather);
+                    getWeather();
+                  }}
+                >
+                  Click to Show Weather
+                </Button>
+                {showWeather ? <Weather weather={weather} /> : null}
               </div>
             </InfoWindow>
           )}

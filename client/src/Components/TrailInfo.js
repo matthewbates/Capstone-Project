@@ -21,6 +21,10 @@ function TrailInfo({
   dogs,
   bikes,
 }) {
+
+
+
+
   return (
     <>
       <div className="d-flex align-items-center justify-content-center bg-dark">
