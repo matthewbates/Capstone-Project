@@ -7,7 +7,13 @@ import {
   ListGroup,
   Container,
 } from "react-bootstrap";
-import { MDBListGroup, MDBListGroupItem, MDBContainer } from "mdb-react-ui-kit";
+import {
+  MDBListGroup,
+  MDBListGroupItem,
+  MDBContainer,
+  MDBRow,
+  MDBCol,
+} from "mdb-react-ui-kit";
 
 function Packlist({ selectedGearTypes, deleteGear }) {
   return (
@@ -20,11 +26,8 @@ function Packlist({ selectedGearTypes, deleteGear }) {
       </div> */}
       <p>Items that were added from Gear Garage will show up below.</p>
       <p>Make sure to pack accordingly, and to always check the weather!</p>
-      <MDBContainer
-        className="checklist-styling col-1"
-        style={{ maxWidth: "28rem" }}
-      >
-        <MDBListGroup horizontal className="gap-1 mb-10 mt-0">
+      <MDBRow className="checklist-styling">
+        <MDBCol horizontal className="gap-1 mb-8 mt-0">
           {selectedGearTypes.map((selectedGear) => (
             // <Button onClick={() => deleteGear(selectedGear.id)}>
             <MDBListGroupItem className="packlist-styling gap-1">
@@ -32,8 +35,8 @@ function Packlist({ selectedGearTypes, deleteGear }) {
             </MDBListGroupItem>
             // </Button>
           ))}
-        </MDBListGroup>
-      </MDBContainer>
+        </MDBCol>
+      </MDBRow>
     </div>
   );
 }
