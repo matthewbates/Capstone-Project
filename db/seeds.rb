@@ -478,7 +478,7 @@ s2 =
     image_one: 'https://i.ebayimg.com/images/g/04gAAOSwRxNiOO8G/s-l1600.jpg',
     image_two: 'https://i.ebayimg.com/images/g/~OwAAOSwzxpiOO8L/s-l1600.jpg',
     image_three: 'https://i.ebayimg.com/images/g/J8gAAOSwBD5iOO8R/s-l1600.jpg',
-    price: 300,
+    price: 280,
     description:
       "This possibly could be the lightest backpacking tent on the market, and has only been used a handful of times. There are some obvious tears in the mesh which need to be patched, but otherwise is in great shape. It's supported by a single trekking pole that must be at least 48 inches tall. Serious inquiries only!",
     catagory: 'Shelters',
@@ -505,7 +505,7 @@ s4 =
     image_one: 'https://i.ebayimg.com/images/g/7SkAAOSwMc9iN4d5/s-l1600.jpg',
     image_two: 'https://i.ebayimg.com/images/g/pyEAAOSwCJRiN4eF/s-l1600.jpg',
     image_three: 'https://i.ebayimg.com/images/g/KqcAAOSwLwJiN4eO/s-l1600.jpg',
-    price: 150,
+    price: 140,
     description:
       'I used this a handful of times and it shows normal wear, but is in overall great condition. There is dirt on the bottom from being set down on trail/camp, but other than that there are no signs of damage.',
     catagory: 'Backpacks',
@@ -535,9 +535,9 @@ s6 =
       'https://www.14ers.com/usercontent/gear/2022/3241/classified3241_164254840961e74cb98ad0f.jpg',
     image_three:
       'https://www.14ers.com/usercontent/gear/2022/3241/classified3241_164254841861e74cc2d8417.jpg',
-    price: 400,
+    price: 380,
     description:
-      'BRAND NEW! I need to sell this ASAP, this week if possible. Asking $400, retails for $899. However, I will consider all reasonable offers, especially cash.',
+      'BRAND NEW! I need to sell this ASAP, this week if possible. Asking $380, retails for $899. However, I will consider all reasonable offers, especially cash.',
     catagory: 'Other',
     user: u1,
   )
@@ -577,7 +577,7 @@ s9 =
       'https://backpackinglight.com/wp-content/uploads/2021/10/B2A039F8-1881-45DC-82E1-AAF77C978A19.jpeg',
     image_three:
       'https://cdn.shopify.com/s/files/1/0004/4652/9572/products/sleeping-bag-in-medium-dry-bag-l_dc19530f-97d3-40ee-940a-dcd16647e314_2048x.jpg?v=1563481799',
-    price: 400,
+    price: 320,
     description:
       'This is a brand new sleeping bag that I received as a gift right after I had purchased another bag, so I do not need this anymore. I am firm on price since it is brand new, but give me an offer and I may provide some wiggle room.',
     catagory: 'Sleep Systems',
@@ -601,7 +601,7 @@ s11 =
     image_one: 'https://i.ebayimg.com/images/g/vMcAAOSw8qpiN7p~/s-l1600.jpg',
     image_two: 'https://i.ebayimg.com/images/g/kbYAAOSwQapiN7qA/s-l1600.jpg',
     image_three: 'https://i.ebayimg.com/images/g/f84AAOSwNd1iN7qC/s-l1600.jpg',
-    price: 150,
+    price: 155,
     description:
       'Used only a few times, great condition, no damage or defects. Olive DCF with mesh large outer pocket, DCF side pockets. Includes removable hip belt.',
     catagory: 'Backpacks',

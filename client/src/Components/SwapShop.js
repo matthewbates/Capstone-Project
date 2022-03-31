@@ -58,11 +58,12 @@ function SwapShop({
             </MDBCarouselItem>
           </MDBCarouselInner>
         </MDBCarousel>
-        <MDBAccordion className="d-flex" initialActive={0}>
+        <MDBAccordion initialActive={0}>
           <MDBAccordionItem collapseId={1} headerTitle={name}>
             <MDBCardBody>
               <MDBCardText>
-                <b className="text-dark">${price}</b> | <b className="text-dark">{category}</b>
+                <b className="text-dark">${price}</b> |{" "}
+                <b className="text-dark">{category}</b>
               </MDBCardText>
 
               <MDBCardText className="text-dark">{description}</MDBCardText>
@@ -72,20 +73,6 @@ function SwapShop({
       </MDBCard>
     </MDBCol>
   );
-}
-
-{
-  /* <Carousel>
-  <Carousel.Item>
-    <img className="d-block w-100" src={image_one} alt="First slide" />
-  </Carousel.Item>
-  <Carousel.Item>
-    <img className="d-block w-100" src={image_two} alt="Second slide" />
-  </Carousel.Item>
-  <Carousel.Item>
-    <img className="d-block w-100" src={image_three} alt="Third slide" />
-  </Carousel.Item>
-</Carousel>; */
 }
 
 export default SwapShop;

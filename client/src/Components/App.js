@@ -110,7 +110,7 @@ function App() {
                       Hikes
                     </Nav.Link>
                     <Nav.Link as={Link} to="/packlist">
-                      Checklist
+                      Packlist
                     </Nav.Link>
                     <Nav.Link as={Link} to="/gear_garage">
                       Gear Garage

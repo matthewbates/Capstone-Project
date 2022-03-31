@@ -69,10 +69,12 @@ function Search({
         >
           {/* GET SEARCH BY PRICE TO WORK */}
           <Dropdown.Item eventKey="">Any</Dropdown.Item>
-          <Dropdown.Item eventKey="0-50">0-50</Dropdown.Item>
-          <Dropdown.Item eventKey="51-100">51-100</Dropdown.Item>
-          <Dropdown.Item eventKey="101-200">101-200</Dropdown.Item>
-          <Dropdown.Item eventKey="201-400">201-400</Dropdown.Item>
+          <Dropdown.Item eventKey="0-49">0-49</Dropdown.Item>
+          <Dropdown.Item eventKey="50-100">50-100</Dropdown.Item>
+          <Dropdown.Item eventKey="101-150">101-150</Dropdown.Item>
+          <Dropdown.Item eventKey="151-200">151-200</Dropdown.Item>
+          <Dropdown.Item eventKey="201-300">201-300</Dropdown.Item>
+          <Dropdown.Item eventKey="301-400">301-400</Dropdown.Item>
         </DropdownButton>{" "}
       </div>
     </Container>

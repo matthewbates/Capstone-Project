@@ -9,11 +9,10 @@ import {
 import { Fragment } from "react";
 
 function Home({ search, setter, currentUser }) {
-
   return (
     <>
-      <MDBCarousel interval={6000} className="carousel-styling">
-        <MDBCarouselInner fade>
+      <MDBCarousel interval={7000} className="carousel-styling">
+        <MDBCarouselInner>
           <MDBCarouselItem className="active">
             <MDBCarouselElement
               src="https://www.14ers.com/photos/wilsongroup/peakphotos/large/201603_MtWil01.jpg"
