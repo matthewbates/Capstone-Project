@@ -25,6 +25,8 @@ function GearGarage({ currentUser, gearTypes, handleSelect }) {
   return (
     <Container className="gear-garage-background">
       <br />
+      <h3 className="gear-garage-header">Gear Garage</h3>
+      <br />
       <div className="container">
         <div className="image">
           <img src="https://www.rei.com/dam/winter_camping_checklist_hero_lg.jpg" />
@@ -41,6 +43,10 @@ function GearGarage({ currentUser, gearTypes, handleSelect }) {
             or rent some of these items. As you become a more experienced
             outdoorsman, you'll find that a lot of the fun is derived in
             figuring out what to bring along to meet your particular needs.
+          </p>
+          <p>
+            Choose the items you'll need for your next outing below to add them
+            to your packlist!
           </p>
         </div>
       </div>
@@ -70,10 +76,9 @@ function GearGarage({ currentUser, gearTypes, handleSelect }) {
                     <MDBBtn
                       rounded
                       outline
-                      className="mx-6 bg-dark text-light"
-                      color="dark"
+                      className="mx-6"
+                      color="success"
                       horizontal
-                      // className="gear-garage-buttons"
                       onClick={() =>
                         handleSelect((selectedGearTypes) => {
                           return [gearItem, ...selectedGearTypes];

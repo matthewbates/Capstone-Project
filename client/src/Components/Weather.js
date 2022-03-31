@@ -33,15 +33,15 @@ function Weather({ weather }) {
               ></img>
             </div>
             <p className="d-flex justify-content-center ">
-              <b>{weather.weather[0].description.toUpperCase()}</b>
+              <b className="text-dark">{weather.weather[0].description.toUpperCase()}</b>
             </p>
             <p>
-              <b>Current Temp: {farTemp}℉</b>
+              <b className="text-dark">Current Temp: {farTemp}℉</b>
             </p>
             <p>
-              <b>Feels Like: {farFeelsLike}℉</b>
+              <b className="text-dark">Feels Like: {farFeelsLike}℉</b>
             </p>
-            <p>
+            <p className="text-dark">
               <b>
                 Low: {farMin}℉ ⎯ High: {farMax}℉
               </b>

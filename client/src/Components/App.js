@@ -77,11 +77,10 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar
-        classname={"App" + (setIsDarkMode ? "dark" : "light")}
+        sticky="top"
         collapseOnSelect
         expand="md"
         variant="dark"
-        // className="navbar-restyling"
         style={{ backgroundColor: "black" }}
       >
         <Container fluid className="navbar-styling">
@@ -103,9 +102,8 @@ function App() {
           </Navbar.Brand>
 
           <div>
-            <Navbar collapseOnSelect expand="lg">
-              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-              <Navbar.Collapse id="responsive-navbar-nav">
+            <Navbar expand="lg">
+              <Container fluid>
                 {currentUser ? (
                   <>
                     <Nav.Link as={Link} to="/map">
@@ -123,13 +121,21 @@ function App() {
                     <Nav.Link as={Link} to="/userpage">
                       Profile
                     </Nav.Link>
-                    <MDBBtn
-                    floating size="md"
-                      className="dark-mode-btn m-1"
-                      onClick={handleDarkModeClick}
-                    >
-                      {isDarkMode ? "🌙" : "☀️"}
-                    </MDBBtn>
+                    <div className="form-check form-switch">
+                      <label
+                        className=" form-check-labe dark-mode-btn"
+                        type="checkbox"
+                        role="switch"
+                        for="flexSwitchCheckDefault"
+                      ></label>
+                      <input
+                        role="switch"
+                        className="form-check-input"
+                        onClick={handleDarkModeClick}
+                        type="checkbox"
+                        id="flexSwitchCheckDefault"
+                      />
+                    </div>
                     <Nav.Link as={Link} to="/disclaimer"></Nav.Link>
                   </>
                 ) : null}
@@ -141,7 +147,7 @@ function App() {
                     </Button>
                   )}
                 </>
-              </Navbar.Collapse>
+              </Container>
             </Navbar>
           </div>
         </Container>

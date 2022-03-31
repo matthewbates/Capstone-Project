@@ -51,7 +51,7 @@ function Login({ setCurrentUser, currentUser }) {
         <div className="pt-5">
           <Form className="login-inner outer">
             <br></br>
-            <h2>Welcome Back!</h2>
+            <h2 className="account-text">Welcome Back!</h2>
             {/* user log in form */}
             <Form.Group className="mb-3" controlId="formBasicUsername">
               <Form.Control

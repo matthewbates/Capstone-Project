@@ -35,8 +35,10 @@ function Trailheads({
 
   function success(position) {
     const currentPosition = {
-      lat: position.coords.latitude,
-      lng: position.coords.longitude,
+      lat: 38.7511,
+      // lat: position.coords.latitude,
+      lng: -105.5214
+      // lng: position.coords.longitude,
     };
     setCurrentPosition(currentPosition);
   }
@@ -100,10 +102,10 @@ function Trailheads({
     },
     {
       id: 4,
-      name: "Barr Trail (To Pikes Peak)",
+      name: "Pikes Peak",
       location: {
-        lat: 38.855787,
-        lng: -104.934,
+        lat: 38.84054,
+        lng: -105.044,
       },
       dot: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
     },
@@ -144,7 +146,7 @@ function Trailheads({
       dot: "http://maps.google.com/mapfiles/ms/icons/pink-dot.png",
     },
     {
-      id: 8,
+      id: 9,
       name: "Mount Columbia",
       location: {
         lat: 38.903881,
@@ -153,7 +155,7 @@ function Trailheads({
       dot: "http://maps.google.com/mapfiles/ms/icons/pink-dot.png",
     },
     {
-      id: 8,
+      id: 10,
       name: "Mount Yale",
       location: {
         lat: 38.844154,
@@ -162,7 +164,7 @@ function Trailheads({
       dot: "http://maps.google.com/mapfiles/ms/icons/pink-dot.png",
     },
     {
-      id: 8,
+      id: 11,
       name: "Mount Oxford",
       location: {
         lat: 38.964776,
@@ -171,7 +173,7 @@ function Trailheads({
       dot: "http://maps.google.com/mapfiles/ms/icons/pink-dot.png",
     },
     {
-      id: 8,
+      id: 12,
       name: "Mount Princeton",
       location: {
         lat: 38.74919,
@@ -180,7 +182,7 @@ function Trailheads({
       dot: "http://maps.google.com/mapfiles/ms/icons/pink-dot.png",
     },
     {
-      id: 8,
+      id: 13,
       name: "Mount Massive",
       location: {
         lat: 38.74919,
@@ -189,7 +191,7 @@ function Trailheads({
       dot: "http://maps.google.com/mapfiles/ms/icons/pink-dot.png",
     },
     {
-      id: 8,
+      id: 14,
       name: "Mount Elbert",
       location: {
         lat: 39.117642,
@@ -197,13 +199,92 @@ function Trailheads({
       },
       dot: "http://maps.google.com/mapfiles/ms/icons/pink-dot.png",
     },
+    {
+      id: 15,
+      name: "Crestone Peak",
+      location: {
+        lat: 37.966847,
+        lng: -105.585,
+      },
+      dot: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+    },
+    {
+      id: 16,
+      name: "Crestone Needle",
+      location: {
+        lat: 37.964693,
+        lng: -105.577,
+      },
+      dot: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+    },
+    {
+      id: 17,
+      name: "Kit Carson Peak",
+      location: {
+        lat: 37.97968,
+        lng: -105.603,
+      },
+      dot: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+    },
+    {
+      id: 18,
+      name: "Challenger Point",
+      location: {
+        lat: 37.980411,
+        lng: -105.607,
+      },
+      dot: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+    },
+    {
+      id: 19,
+      name: "Humboldt Peak",
+      location: {
+        lat: 37.976111,
+        lng: -105.555,
+      },
+      dot: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+    },
+    {
+      id: 20,
+      name: "Mount Democrat (Decalibron Loop)",
+      location: {
+        lat: 39.339584,
+        lng: -106.14,
+      },
+      dot: "http://maps.google.com/mapfiles/ms/icons/purple-dot.png",
+    },
+    {
+      id: 21,
+      name: "Mount Lincoln (Decalibron Loop)",
+      location: {
+        lat: 39.3514551,
+        lng: -106.111,
+      },
+      dot: "http://maps.google.com/mapfiles/ms/icons/purple-dot.png",
+    },
+    {
+      id: 22,
+      name: "Mount Bross (Decalibron Loop)",
+      location: {
+        lat: 39.335267,
+        lng: -106.108,
+      },
+      dot: "http://maps.google.com/mapfiles/ms/icons/purple-dot.png",
+    },
+    {
+      id: 23,
+      name: "Mount Cameron (Decalibron Loop)",
+      location: {
+        lat: 39.347085,
+        lng: -106.118,
+      },
+      dot: "http://maps.google.com/mapfiles/ms/icons/purple-dot.png",
+    },
   ];
 
   const onSelect = (item) => {
     setSelected(item);
   };
-
-  const image = "⛰";
 
   return (
     <div className="google-styling">
@@ -232,7 +313,7 @@ function Trailheads({
             >
               <div>
                 <b>
-                  <u>{selected.name}</u>
+                  <u className="text-dark">{selected.name}</u>
                   <br />
                 </b>{" "}
                 <br />

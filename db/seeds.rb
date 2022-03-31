@@ -323,6 +323,141 @@ h14 =
     lat: '39.117642',
     lng: '-106.445',
   )
+h15 =
+  Hike.create!(
+    trail_name: 'Crestone Peak',
+    image:
+      'https://cdn-assets.alltrails.com/static-map/production/at-map/20682906/trail-us-colorado-crestone-peak-trail-at-map-20682906-1642644959-414x200-2.png',
+    out_and_back: 'Yes',
+    loop: 'No',
+    difficulty: 'Hard',
+    total_length: 10.0,
+    elevation_profile: 'Ascent: 5,403 ft. | Descent: 1,081 ft.',
+    allows_dogs: 'No',
+    allows_bikes: 'No',
+    lat: '37.966847',
+    lng: '-105.585',
+  )
+h16 =
+  Hike.create!(
+    trail_name: 'Crestone Needle',
+    image:
+      'https://cdn-assets.alltrails.com/static-map/production/at-map/20683373/trail-us-colorado-crestone-needle-from-old-south-colony-trailhead-at-map-20683373-1642644968-414x200-2.png',
+    out_and_back: 'Yes',
+    loop: 'No',
+    difficulty: 'Hard',
+    total_length: 9.0,
+    elevation_profile: 'Ascent: 4,893 ft. | Descent: 613 ft.',
+    allows_dogs: 'No',
+    allows_bikes: 'No',
+    lat: '37.964693',
+    lng: '-105.577',
+  )
+h17 =
+  Hike.create!(
+    trail_name: 'Kit Carson Peak',
+    image:
+      'https://cdn-assets.alltrails.com/static-map/production/at-map/20085482/trail-us-washington-mount-kit-carson-trail-at-map-20085482-1647545418-414x200-2.png',
+    out_and_back: 'Yes',
+    loop: 'No',
+    difficulty: 'Hard',
+    total_length: 11.8,
+    elevation_profile: 'Ascent: 5,508 ft. | Descent: 247 ft.',
+    allows_dogs: 'No',
+    allows_bikes: 'No',
+    lat: '37.97968',
+    lng: '-105.603',
+  )
+h18 =
+  Hike.create!(
+    trail_name: 'Challenger Point',
+    image:
+      'https://cdn-assets.alltrails.com/static-map/production/at-map/21236669/trail-us-colorado-challenger-point-at-map-21236669-1642646928-414x200-2.png',
+    out_and_back: 'Yes',
+    loop: 'No',
+    difficulty: 'Hard',
+    total_length: 10.75,
+    elevation_profile: 'Ascent: 5,332 ft. | Descent: 108 ft.',
+    allows_dogs: 'Yes',
+    allows_bikes: 'No',
+    lat: '37.980411',
+    lng: '-105.607',
+  )
+h19 =
+  Hike.create!(
+    trail_name: 'Humboldt Peak',
+    image:
+      'https://cdn-assets.alltrails.com/static-map/production/at-map/20683730/trail-us-colorado-humboldt-peak-trail-at-map-20683730-1642644970-414x200-2.png',
+    out_and_back: 'Yes',
+    loop: 'No',
+    difficulty: 'Hard',
+    total_length: 10.6,
+    elevation_profile: 'Ascent: 4,234 ft. | Descent: 69 ft.',
+    allows_dogs: 'Yes',
+    allows_bikes: 'No',
+    lat: '37.976111',
+    lng: '-105.555',
+  )
+h20 =
+  Hike.create!(
+    trail_name: 'Mount Democrat (Decalibron Loop)',
+    image:
+      'https://cdn-assets.alltrails.com/static-map/production/at-map/75193976/trail-us-colorado-the-decalibron-mounts-democrat-cameron-lincoln-and-bross-trail-at-map-75193976-1642845044-414x200-2.png',
+    out_and_back: 'Yes',
+    loop: 'No',
+    difficulty: 'Moderate',
+    total_length: 7.0,
+    elevation_profile: 'Ascent: 3,136 ft. | Descent: 564 ft.',
+    allows_dogs: 'Yes',
+    allows_bikes: 'No',
+    lat: '39.339584',
+    lng: '-106.14',
+  )
+h21 =
+  Hike.create!(
+    trail_name: 'Mount Lincoln (Decalibron Loop)',
+    image:
+      'https://cdn-assets.alltrails.com/static-map/production/at-map/75193976/trail-us-colorado-the-decalibron-mounts-democrat-cameron-lincoln-and-bross-trail-at-map-75193976-1642845044-414x200-2.png',
+    out_and_back: 'Yes',
+    loop: 'No',
+    difficulty: 'Moderate',
+    total_length: 7.0,
+    elevation_profile: 'Ascent: 3,136 ft. | Descent: 564 ft.',
+    allows_dogs: 'Yes',
+    allows_bikes: 'No',
+    lat: '39.3514551',
+    lng: '-106.111',
+  )
+h22 =
+  Hike.create!(
+    trail_name: 'Mount Bross (Decalibron Loop)',
+    image:
+      'https://cdn-assets.alltrails.com/static-map/production/at-map/75193976/trail-us-colorado-the-decalibron-mounts-democrat-cameron-lincoln-and-bross-trail-at-map-75193976-1642845044-414x200-2.png',
+    out_and_back: 'Yes',
+    loop: 'No',
+    difficulty: 'Moderate',
+    total_length: 7.0,
+    elevation_profile: 'Ascent: 3,136 ft. | Descent: 564 ft.',
+    allows_dogs: 'Yes',
+    allows_bikes: 'No',
+    lat: '39.335267',
+    lng: '-106.108',
+  )
+h23 =
+  Hike.create!(
+    trail_name: 'Mount Cameron (Decalibron Loop)',
+    image:
+      'https://cdn-assets.alltrails.com/static-map/production/at-map/75193976/trail-us-colorado-the-decalibron-mounts-democrat-cameron-lincoln-and-bross-trail-at-map-75193976-1642845044-414x200-2.png',
+    out_and_back: 'Yes',
+    loop: 'No',
+    difficulty: 'Moderate',
+    total_length: 7.0,
+    elevation_profile: 'Ascent: 3,136 ft. | Descent: 564 ft.',
+    allows_dogs: 'Yes',
+    allows_bikes: 'No',
+    lat: '39.347085',
+    lng: '-106.118',
+  )
 
 puts 'Creating Swapshop items...'
 s1 =

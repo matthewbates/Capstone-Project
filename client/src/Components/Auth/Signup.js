@@ -45,7 +45,7 @@ function Signup({ setCurrentUser, currentUser }) {
         <div className="pt-5">
           <Form className="outer sign-up-inner">
             <br></br>
-            <h2>Register Account</h2>
+            <h2 className="account-text">Register Account</h2>
             <Form.Group className="mb-3" controlId="formFirstName">
               <Form.Control
                 onChange={(e) => setFirstName(e.target.value)}

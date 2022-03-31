@@ -12,15 +12,25 @@ import { MDBListGroup, MDBListGroupItem, MDBContainer } from "mdb-react-ui-kit";
 function Packlist({ selectedGearTypes, deleteGear }) {
   return (
     <div className="checklist-styling">
-      <p>
-       Items that were added from Gear Garage will show up below. Make sure to pack accordingly, and to always check the weather!
-      </p>
-      <MDBContainer className="checklist-styling flex-fill">
-        <MDBListGroup style={{ maxWidth: "22rem" }}>
+      <br />
+      <h3 className="gear-garage-header">Checklist</h3>
+      <br />
+      {/* <div className="checklist-image">
+        <img src="https://www.atimeshare.com/wp-content/uploads/2021/07/four-seasons.jpg" />
+      </div> */}
+      <p>Items that were added from Gear Garage will show up below.</p>
+      <p>Make sure to pack accordingly, and to always check the weather!</p>
+      <MDBContainer
+        className="checklist-styling col-1"
+        style={{ maxWidth: "28rem" }}
+      >
+        <MDBListGroup horizontal className="gap-1 mb-10 mt-0">
           {selectedGearTypes.map((selectedGear) => (
-            <Button onClick={() => deleteGear(selectedGear.id)}>
-              <MDBListGroupItem>{selectedGear}</MDBListGroupItem>
-            </Button>
+            // <Button onClick={() => deleteGear(selectedGear.id)}>
+            <MDBListGroupItem className="packlist-styling gap-1">
+              {selectedGear}
+            </MDBListGroupItem>
+            // </Button>
           ))}
         </MDBListGroup>
       </MDBContainer>

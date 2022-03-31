@@ -32,7 +32,7 @@ function SwapShop({
 }) {
   return (
     <MDBCol>
-      <MDBCard className="d-flex align-items-stretch">
+      <MDBCard className="align-items-stretch">
         <MDBCarousel showControls interval="25000">
           <MDBCarouselInner data-interval="false">
             <MDBCarouselItem className="active">
