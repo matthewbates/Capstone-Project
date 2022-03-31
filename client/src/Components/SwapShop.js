@@ -61,13 +61,11 @@ function SwapShop({
         <MDBAccordion className="d-flex" initialActive={0}>
           <MDBAccordionItem collapseId={1} headerTitle={name}>
             <MDBCardBody>
-              <MDBCardTitle>{name}</MDBCardTitle>
-
               <MDBCardText>
-                <b>${price}</b> | <b>{category}</b>
+                <b className="text-dark">${price}</b> | <b className="text-dark">{category}</b>
               </MDBCardText>
 
-              <MDBCardText>{description}</MDBCardText>
+              <MDBCardText className="text-dark">{description}</MDBCardText>
             </MDBCardBody>
           </MDBAccordionItem>
         </MDBAccordion>

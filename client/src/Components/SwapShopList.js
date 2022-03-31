@@ -14,9 +14,7 @@ function SwapShopList({
   priceSearch,
   priceSetter,
   category,
-})
-
-{
+}) {
   const filteredSearch = swapShop
     .filter((shop) => shop.item.toLowerCase().includes(search.toLowerCase()))
     .filter((shop) =>
@@ -39,7 +37,8 @@ function SwapShopList({
 
   return (
     <div className="body-of-swap-shop">
-      <h2>Swap/Shop</h2>
+      <br />
+      <h2 style={{ textAlign: "center" }}>Swap/Shop</h2>
       <Container>
         <Search
           search={search}
