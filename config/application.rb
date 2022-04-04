@@ -28,6 +28,9 @@ module HikerApp
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
 
+    # restricts Google Maps API key
+    google_api_key: 'AIzaSyD4G8pUuPzvq_CQ9wdT5eOJpGG4ywQtFsY'
+
     # Use SameSite=Strict for all cookies to help protect against CSRF
     config.action_dispatch.cookies_same_site_protection = :strict
   end

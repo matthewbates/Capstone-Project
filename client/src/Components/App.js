@@ -25,7 +25,7 @@ function App() {
   const [catSearch, setCatSearch] = useState("");
   const [priceSearch, setPriceSearch] = useState("");
   const [hikeSearch, setHikeSearch] = useState("");
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
     fetch("/swap_shops")

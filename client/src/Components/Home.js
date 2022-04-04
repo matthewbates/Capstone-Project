@@ -11,7 +11,7 @@ import { Fragment } from "react";
 function Home({ search, setter, currentUser }) {
   return (
     <>
-      <MDBCarousel interval={7000} className="carousel-styling">
+      <MDBCarousel className="carousel-styling">
         <MDBCarouselInner>
           <MDBCarouselItem className="active">
             <MDBCarouselElement

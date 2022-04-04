@@ -51,7 +51,8 @@ function Login({ setCurrentUser, currentUser }) {
         <div className="pt-5">
           <Form className="login-inner outer">
             <br></br>
-            <h2 className="account-text">Welcome Back!</h2>
+            <h2 className="text-dark account-text">Mountain Buddy</h2>
+            <br />
             {/* user log in form */}
             <Form.Group className="mb-3" controlId="formBasicUsername">
               <Form.Control
@@ -79,11 +80,11 @@ function Login({ setCurrentUser, currentUser }) {
               Submit
             </Button>
             <br />
-            <div>
+            <div className="text-dark">
               Not a member? <Link to="/signup">Register</Link>
             </div>
             <div>
-              <GoogleLoginOption />
+              <GoogleLoginOption/>
             </div>
           </Form>
         </div>
