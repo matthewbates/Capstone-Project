@@ -13,7 +13,7 @@
 ![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=plastic&logo=linkedin&logoColor=white)
 ![Codewars](https://img.shields.io/badge/Codewars-B1361E?style=plastic&logo=codewars&logoColor=grey)
 
-## Learning Goals:
+## Learning Goals
 - Build a full-stack web application with a React.js front-end && Ruby on Rails back-end
 - Implement authorization/authentication - a user should be able to login && stay logged in
 - Have multiple models with many-to-many relationships
